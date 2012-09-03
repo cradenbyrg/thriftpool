@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>remote Package &mdash; thriftpool 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="thriftpool 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="API Documentation" href="../api.html" />
+    <link rel="next" title="utils Package" href="thriftpool.utils.html" />
+    <link rel="prev" title="controllers Package" href="thriftpool.controllers.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.utils.html" title="utils Package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.controllers.html" title="controllers Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api.html" accesskey="U">API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="remote-package">
+<h1>remote Package<a class="headerlink" href="#remote-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><tt class="xref py py-mod docutils literal"><span class="pre">remote</span></tt> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-thriftpool.remote"></span></div>
+<div class="section" id="module-thriftpool.remote.ThriftPool">
+<span id="thriftpool-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">ThriftPool</span></tt> Module<a class="headerlink" href="#module-thriftpool.remote.ThriftPool" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="thriftpool.remote.ThriftPool.Client">
+<em class="property">class </em><tt class="descclassname">thriftpool.remote.ThriftPool.</tt><tt class="descname">Client</tt><big>(</big><em>iprot</em>, <em>oprot=None</em><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.remote.ThriftPool.Iface" title="thriftpool.remote.ThriftPool.Iface"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.remote.ThriftPool.Iface</span></tt></a></p>
+<dl class="method">
+<dt id="thriftpool.remote.ThriftPool.Client.ping">
+<tt class="descname">ping</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Client.ping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.remote.ThriftPool.Client.recv_ping">
+<tt class="descname">recv_ping</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Client.recv_ping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.remote.ThriftPool.Client.send_ping">
+<tt class="descname">send_ping</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Client.send_ping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.remote.ThriftPool.Iface">
+<em class="property">class </em><tt class="descclassname">thriftpool.remote.ThriftPool.</tt><tt class="descname">Iface</tt><a class="headerlink" href="#thriftpool.remote.ThriftPool.Iface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="thriftpool.remote.ThriftPool.Iface.ping">
+<tt class="descname">ping</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Iface.ping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.remote.ThriftPool.Processor">
+<em class="property">class </em><tt class="descclassname">thriftpool.remote.ThriftPool.</tt><tt class="descname">Processor</tt><big>(</big><em>handler</em><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Processor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.remote.ThriftPool.Iface" title="thriftpool.remote.ThriftPool.Iface"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.remote.ThriftPool.Iface</span></tt></a>, <tt class="xref py py-class docutils literal"><span class="pre">thrift.Thrift.TProcessor</span></tt></p>
+<dl class="method">
+<dt id="thriftpool.remote.ThriftPool.Processor.process">
+<tt class="descname">process</tt><big>(</big><em>iprot</em>, <em>oprot</em><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Processor.process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.remote.ThriftPool.Processor.process_ping">
+<tt class="descname">process_ping</tt><big>(</big><em>seqid</em>, <em>iprot</em>, <em>oprot</em><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Processor.process_ping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.remote.ThriftPool.ping_args">
+<em class="property">class </em><tt class="descclassname">thriftpool.remote.ThriftPool.</tt><tt class="descname">ping_args</tt><a class="headerlink" href="#thriftpool.remote.ThriftPool.ping_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">thrift.protocol.TBase.TBase</span></tt></p>
+<dl class="attribute">
+<dt id="thriftpool.remote.ThriftPool.ping_args.thrift_spec">
+<tt class="descname">thrift_spec</tt><em class="property"> = ()</em><a class="headerlink" href="#thriftpool.remote.ThriftPool.ping_args.thrift_spec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.remote.ThriftPool.ping_result">
+<em class="property">class </em><tt class="descclassname">thriftpool.remote.ThriftPool.</tt><tt class="descname">ping_result</tt><a class="headerlink" href="#thriftpool.remote.ThriftPool.ping_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">thrift.protocol.TBase.TBase</span></tt></p>
+<dl class="attribute">
+<dt id="thriftpool.remote.ThriftPool.ping_result.thrift_spec">
+<tt class="descname">thrift_spec</tt><em class="property"> = ()</em><a class="headerlink" href="#thriftpool.remote.ThriftPool.ping_result.thrift_spec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.remote.constants">
+<span id="constants-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">constants</span></tt> Module<a class="headerlink" href="#module-thriftpool.remote.constants" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-thriftpool.remote.handler">
+<span id="handler-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">handler</span></tt> Module<a class="headerlink" href="#module-thriftpool.remote.handler" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="thriftpool.remote.handler.Handler">
+<em class="property">class </em><tt class="descclassname">thriftpool.remote.handler.</tt><tt class="descname">Handler</tt><a class="headerlink" href="#thriftpool.remote.handler.Handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.remote.ThriftPool.Iface" title="thriftpool.remote.ThriftPool.Iface"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.remote.ThriftPool.Iface</span></tt></a></p>
+<dl class="method">
+<dt id="thriftpool.remote.handler.Handler.ping">
+<tt class="descname">ping</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.remote.handler.Handler.ping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.remote.ttypes">
+<span id="ttypes-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">ttypes</span></tt> Module<a class="headerlink" href="#module-thriftpool.remote.ttypes" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">remote Package</a><ul>
+<li><a class="reference internal" href="#id1"><tt class="docutils literal"><span class="pre">remote</span></tt> Package</a></li>
+<li><a class="reference internal" href="#module-thriftpool.remote.ThriftPool"><tt class="docutils literal"><span class="pre">ThriftPool</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.remote.constants"><tt class="docutils literal"><span class="pre">constants</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.remote.handler"><tt class="docutils literal"><span class="pre">handler</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.remote.ttypes"><tt class="docutils literal"><span class="pre">ttypes</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="thriftpool.controllers.html"
+                        title="previous chapter">controllers Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="thriftpool.utils.html"
+                        title="next chapter">utils Package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/thriftpool.remote.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.utils.html" title="utils Package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.controllers.html" title="controllers Package"
+             >previous</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api.html" >API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Lipin Dmitriy.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>app Package &mdash; thriftpool 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="thriftpool 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="API Documentation" href="../api.html" />
+    <link rel="next" title="bin Package" href="thriftpool.bin.html" />
+    <link rel="prev" title="API Documentation" href="../api.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.bin.html" title="bin Package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../api.html" title="API Documentation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api.html" accesskey="U">API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="app-package">
+<h1>app Package<a class="headerlink" href="#app-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-thriftpool.app.base">
+<span id="base-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">base</span></tt> Module<a class="headerlink" href="#module-thriftpool.app.base" title="Permalink to this headline">¶</a></h2>
+<p>Main factory for this library. Single entry point for all application.</p>
+<dl class="class">
+<dt id="thriftpool.app.base.ThriftPool">
+<em class="property">class </em><tt class="descclassname">thriftpool.app.base.</tt><tt class="descname">ThriftPool</tt><a class="headerlink" href="#thriftpool.app.base.ThriftPool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="thriftpool.utils.html#thriftpool.utils.mixin.SubclassMixin" title="thriftpool.utils.mixin.SubclassMixin"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.mixin.SubclassMixin</span></tt></a></p>
+<p>Main entry point for this application.</p>
+<dl class="attribute">
+<dt id="thriftpool.app.base.ThriftPool.Loader">
+<tt class="descname">Loader</tt><a class="headerlink" href="#thriftpool.app.base.ThriftPool.Loader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.app.base.ThriftPool.Logging">
+<tt class="descname">Logging</tt><a class="headerlink" href="#thriftpool.app.base.ThriftPool.Logging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create bounded logging initialize class from <a class="reference internal" href="#thriftpool.app.log.Logging" title="thriftpool.app.log.Logging"><tt class="xref py py-class docutils literal"><span class="pre">log.Logging</span></tt></a>.
+We will call <a class="reference internal" href="#thriftpool.app.log.Logging.setup" title="thriftpool.app.log.Logging.setup"><tt class="xref py py-meth docutils literal"><span class="pre">log.Logging.setup()</span></tt></a> on finalization to setup
+logging.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.app.base.ThriftPool.OrchestratorController">
+<tt class="descname">OrchestratorController</tt><a class="headerlink" href="#thriftpool.app.base.ThriftPool.OrchestratorController" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.app.base.ThriftPool.SlotsRepository">
+<tt class="descname">SlotsRepository</tt><a class="headerlink" href="#thriftpool.app.base.ThriftPool.SlotsRepository" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create bounded slots repository from <tt class="xref py py-class docutils literal"><span class="pre">slots:Repository</span></tt>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.app.base.ThriftPool.config">
+<tt class="descname">config</tt><a class="headerlink" href="#thriftpool.app.base.ThriftPool.config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Empty application configuration.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.app.base.ThriftPool.context">
+<tt class="descname">context</tt><a class="headerlink" href="#thriftpool.app.base.ThriftPool.context" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.app.base.ThriftPool.finalize">
+<tt class="descname">finalize</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.app.base.ThriftPool.finalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make some steps before application startup.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.app.base.ThriftPool.loader">
+<tt class="descname">loader</tt><a class="headerlink" href="#thriftpool.app.base.ThriftPool.loader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.app.base.ThriftPool.loader_cls">
+<tt class="descname">loader_cls</tt><em class="property"> = 'thriftpool.app.loader:Loader'</em><a class="headerlink" href="#thriftpool.app.base.ThriftPool.loader_cls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default loader for this application. Must provide configuration
+for it.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.app.base.ThriftPool.log">
+<tt class="descname">log</tt><a class="headerlink" href="#thriftpool.app.base.ThriftPool.log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiate logging initializer from bounded class.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.app.base.ThriftPool.loop">
+<tt class="descname">loop</tt><a class="headerlink" href="#thriftpool.app.base.ThriftPool.loop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.app.base.ThriftPool.orchestrator">
+<tt class="descname">orchestrator</tt><a class="headerlink" href="#thriftpool.app.base.ThriftPool.orchestrator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.app.base.ThriftPool.slots">
+<tt class="descname">slots</tt><a class="headerlink" href="#thriftpool.app.base.ThriftPool.slots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create repository of service slots. By default it is empty.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.app.base.ThriftPool.socket_zmq">
+<tt class="descname">socket_zmq</tt><a class="headerlink" href="#thriftpool.app.base.ThriftPool.socket_zmq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.app.config">
+<span id="config-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">config</span></tt> Module<a class="headerlink" href="#module-thriftpool.app.config" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="thriftpool.app.config.Configuration">
+<em class="property">class </em><tt class="descclassname">thriftpool.app.config.</tt><tt class="descname">Configuration</tt><big>(</big><em>config</em><big>)</big><a class="headerlink" href="#thriftpool.app.config.Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="thriftpool.utils.html#thriftpool.utils.structures.AggregatedView" title="thriftpool.utils.structures.AggregatedView"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.structures.AggregatedView</span></tt></a></p>
+<p>Default application configuration.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.app.loader">
+<span id="loader-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">loader</span></tt> Module<a class="headerlink" href="#module-thriftpool.app.loader" title="Permalink to this headline">¶</a></h2>
+<p>Contains initializer for application.</p>
+<dl class="class">
+<dt id="thriftpool.app.loader.Loader">
+<em class="property">class </em><tt class="descclassname">thriftpool.app.loader.</tt><tt class="descname">Loader</tt><a class="headerlink" href="#thriftpool.app.loader.Loader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Provide configuration and some callback for main application.</p>
+<dl class="method">
+<dt id="thriftpool.app.loader.Loader.after_start">
+<tt class="descname">after_start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.app.loader.Loader.after_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called after controller start.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.app.loader.Loader.app">
+<tt class="descname">app</tt><em class="property"> = None</em><a class="headerlink" href="#thriftpool.app.loader.Loader.app" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.app.loader.Loader.get_config">
+<tt class="descname">get_config</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.app.loader.Loader.get_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.app.loader.Loader.on_before_init">
+<tt class="descname">on_before_init</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.app.loader.Loader.on_before_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called before controller initialization.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.app.loader.Loader.on_shutdown">
+<tt class="descname">on_shutdown</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.app.loader.Loader.on_shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called after controller shutdown.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.app.loader.Loader.on_start">
+<tt class="descname">on_start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.app.loader.Loader.on_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called before controller start.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.app.log">
+<span id="log-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">log</span></tt> Module<a class="headerlink" href="#module-thriftpool.app.log" title="Permalink to this headline">¶</a></h2>
+<p>Configure logging subsystem.</p>
+<dl class="class">
+<dt id="thriftpool.app.log.Logging">
+<em class="property">class </em><tt class="descclassname">thriftpool.app.log.</tt><tt class="descname">Logging</tt><a class="headerlink" href="#thriftpool.app.log.Logging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Setup logging subsystem.</p>
+<dl class="attribute">
+<dt id="thriftpool.app.log.Logging.app">
+<tt class="descname">app</tt><em class="property"> = None</em><a class="headerlink" href="#thriftpool.app.log.Logging.app" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.app.log.Logging.colorize">
+<tt class="descname">colorize</tt><big>(</big><em>logfile=None</em><big>)</big><a class="headerlink" href="#thriftpool.app.log.Logging.colorize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can be output colored?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.app.log.Logging.get_handler">
+<tt class="descname">get_handler</tt><big>(</big><em>logfile=None</em><big>)</big><a class="headerlink" href="#thriftpool.app.log.Logging.get_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create log handler with either a filename, an open stream
+or <tt class="xref py py-const docutils literal"><span class="pre">None</span></tt> (stderr).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.app.log.Logging.redirect_stdouts_to_logger">
+<tt class="descname">redirect_stdouts_to_logger</tt><big>(</big><em>logger</em>, <em>loglevel=None</em>, <em>stdout=True</em>, <em>stderr=True</em><big>)</big><a class="headerlink" href="#thriftpool.app.log.Logging.redirect_stdouts_to_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Redirect <tt class="xref py py-class docutils literal"><span class="pre">sys.stdout</span></tt> and <tt class="xref py py-class docutils literal"><span class="pre">sys.stderr</span></tt> to a
+logging instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>logger</strong> &#8211; The <tt class="xref py py-class docutils literal"><span class="pre">logging.Logger</span></tt> instance to redirect to.</li>
+<li><strong>loglevel</strong> &#8211; The loglevel redirected messages will be logged as.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.app.log.Logging.setup">
+<tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.app.log.Logging.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.app.log.Logging.setup_handlers">
+<tt class="descname">setup_handlers</tt><big>(</big><em>logger</em>, <em>logfile</em>, <em>format</em>, <em>formatter=&lt;class 'thriftpool.utils.logs.ColorFormatter'&gt;</em><big>)</big><a class="headerlink" href="#thriftpool.app.log.Logging.setup_handlers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register needed handlers for given logger. If <tt class="docutils literal"><span class="pre">logfile</span></tt> equal to 
+<tt class="xref py py-const docutils literal"><span class="pre">None</span></tt> use <tt class="xref py py-attr docutils literal"><span class="pre">sys.stderr</span></tt> as <tt class="docutils literal"><span class="pre">logfile</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.app.log.Logging.setup_request_logging">
+<tt class="descname">setup_request_logging</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.app.log.Logging.setup_request_logging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup system to log requests.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.app.slots">
+<span id="slots-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">slots</span></tt> Module<a class="headerlink" href="#module-thriftpool.app.slots" title="Permalink to this headline">¶</a></h2>
+<p>Implement service repository.</p>
+<dl class="class">
+<dt id="thriftpool.app.slots.Repository">
+<em class="property">class </em><tt class="descclassname">thriftpool.app.slots.</tt><tt class="descname">Repository</tt><a class="headerlink" href="#thriftpool.app.slots.Repository" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">set</span></tt></p>
+<p>Store existed slots.</p>
+<dl class="method">
+<dt id="thriftpool.app.slots.Repository.register">
+<tt class="descname">register</tt><big>(</big><em>name</em>, <em>processor_cls</em>, <em>handler_cls</em>, <em>**opts</em><big>)</big><a class="headerlink" href="#thriftpool.app.slots.Repository.register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">app Package</a><ul>
+<li><a class="reference internal" href="#module-thriftpool.app.base"><tt class="docutils literal"><span class="pre">base</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.app.config"><tt class="docutils literal"><span class="pre">config</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.app.loader"><tt class="docutils literal"><span class="pre">loader</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.app.log"><tt class="docutils literal"><span class="pre">log</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.app.slots"><tt class="docutils literal"><span class="pre">slots</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../api.html"
+                        title="previous chapter">API Documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="thriftpool.bin.html"
+                        title="next chapter">bin Package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/thriftpool.app.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.bin.html" title="bin Package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../api.html" title="API Documentation"
+             >previous</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api.html" >API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Lipin Dmitriy.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

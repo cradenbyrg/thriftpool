@@ -1,0 +1,905 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>utils Package &mdash; thriftpool 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="thriftpool 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="API Documentation" href="../api.html" />
+    <link rel="next" title="dispatch Package" href="thriftpool.utils.dispatch.html" />
+    <link rel="prev" title="remote Package" href="thriftpool.remote.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.utils.dispatch.html" title="dispatch Package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.remote.html" title="remote Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api.html" accesskey="U">API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="utils-package">
+<h1>utils Package<a class="headerlink" href="#utils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-thriftpool.utils.debug">
+<span id="debug-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">debug</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.debug" title="Permalink to this headline">¶</a></h2>
+<p>Some useful class for request logging.</p>
+<dl class="class">
+<dt id="thriftpool.utils.debug.RequestLogger">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.debug.</tt><tt class="descname">RequestLogger</tt><big>(</big><em>logger</em>, <em>colored</em><big>)</big><a class="headerlink" href="#thriftpool.utils.debug.RequestLogger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="thriftpool.utils.debug.RequestLogger.decorate">
+<tt class="descname">decorate</tt><big>(</big><em>signal</em>, <em>sender</em>, <em>fn</em><big>)</big><a class="headerlink" href="#thriftpool.utils.debug.RequestLogger.decorate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.debug.RequestLogger.setup">
+<tt class="descname">setup</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.debug.RequestLogger.setup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.debug.qualname">
+<tt class="descclassname">thriftpool.utils.debug.</tt><tt class="descname">qualname</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#thriftpool.utils.debug.qualname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.utils.encoding">
+<span id="encoding-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">encoding</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.encoding" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="thriftpool.utils.encoding.smart_str">
+<tt class="descclassname">thriftpool.utils.encoding.</tt><tt class="descname">smart_str</tt><big>(</big><em>s</em>, <em>encoding='utf-8'</em>, <em>strings_only=False</em>, <em>errors='strict'</em><big>)</big><a class="headerlink" href="#thriftpool.utils.encoding.smart_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a bytestring version of &#8216;s&#8217;, encoded as specified in &#8216;encoding&#8217;.</p>
+<p>If strings_only is True, don&#8217;t convert (some) non-string-like objects.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.encoding.smart_unicode">
+<tt class="descclassname">thriftpool.utils.encoding.</tt><tt class="descname">smart_unicode</tt><big>(</big><em>s</em>, <em>encoding='utf-8'</em>, <em>strings_only=False</em>, <em>errors='strict'</em><big>)</big><a class="headerlink" href="#thriftpool.utils.encoding.smart_unicode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a unicode object representing &#8216;s&#8217;. Treats bytestrings using the
+&#8216;encoding&#8217; codec.</p>
+<p>If strings_only is True, don&#8217;t convert (some) non-string-like objects.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.utils.finalize">
+<span id="finalize-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">finalize</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.finalize" title="Permalink to this headline">¶</a></h2>
+<p>Execute cleanup handlers when objects go out of scope.</p>
+<p>Taken from <tt class="xref py py-class docutils literal"><span class="pre">multiprocessing.util.Finalize</span></tt>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body"><ol class="first loweralpha simple" start="3">
+<li>2009 - 2012 by Ask Solem.</li>
+</ol>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body"><p class="first last">BSD, see LICENSE for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="thriftpool.utils.finalize.Finalize">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.finalize.</tt><tt class="descname">Finalize</tt><big>(</big><em>obj</em>, <em>callback</em>, <em>args=()</em>, <em>kwargs=None</em>, <em>exitpriority=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.finalize.Finalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Object finalization using weakrefs.</p>
+<dl class="method">
+<dt id="thriftpool.utils.finalize.Finalize.cancel">
+<tt class="descname">cancel</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.finalize.Finalize.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancel finalization of the object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.finalize.Finalize.still_active">
+<tt class="descname">still_active</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.finalize.Finalize.still_active" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.utils.functional">
+<span id="functional-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">functional</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.functional" title="Permalink to this headline">¶</a></h2>
+<p>Some useful tools for imports.</p>
+<p>This file was copied and adapted from celery.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body"><ol class="first loweralpha simple" start="3">
+<li>2009 - 2012 by Ask Solem.</li>
+</ol>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body"><p class="first last">BSD, see LICENSE for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="thriftpool.utils.functional.cached_property">
+<tt class="descclassname">thriftpool.utils.functional.</tt><tt class="descname">cached_property</tt><a class="headerlink" href="#thriftpool.utils.functional.cached_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property descriptor that caches the return value
+of the get function.</p>
+<p><em>Examples</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@cached_property</span>
+<span class="k">def</span> <span class="nf">connection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Connection</span><span class="p">()</span>
+
+<span class="nd">@connection.setter</span>  <span class="c"># Prepares stored value</span>
+<span class="k">def</span> <span class="nf">connection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;Connection must be a connection&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span>
+
+<span class="nd">@connection.deleter</span>
+<span class="k">def</span> <span class="nf">connection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="c"># Additional action to do at del(self.attr)</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Connection </span><span class="si">%r</span><span class="s"> deleted&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.utils.imports">
+<span id="imports-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">imports</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.imports" title="Permalink to this headline">¶</a></h2>
+<p>Some useful tools for imports.</p>
+<p>This file was copied and adapted from celery.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body"><ol class="first loweralpha simple" start="3">
+<li>2009 - 2012 by Ask Solem.</li>
+</ol>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body"><p class="first last">BSD, see LICENSE for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="thriftpool.utils.imports.symbol_by_name">
+<tt class="descclassname">thriftpool.utils.imports.</tt><tt class="descname">symbol_by_name</tt><big>(</big><em>name</em>, <em>aliases={}</em>, <em>imp=None</em>, <em>package=None</em>, <em>sep='.'</em>, <em>default=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.utils.imports.symbol_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get symbol by qualified name.</p>
+<p>The name should be the full dot-separated path to the class:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">modulename</span><span class="o">.</span><span class="n">ClassName</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-python"><pre>celery.concurrency.processes.TaskPool
+                            ^- class name</pre>
+</div>
+<p>or using &#8216;:&#8217; to separate module and symbol:</p>
+<div class="highlight-python"><pre>celery.concurrency.processes:TaskPool</pre>
+</div>
+<p>If <cite>aliases</cite> is provided, a dict containing short name/long name
+mappings, the name is looked up in the aliases first.</p>
+<p>Examples:</p>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">symbol_by_name</span><span class="p">(</span><span class="s">&quot;celery.concurrency.processes.TaskPool&quot;</span><span class="p">)</span>
+<span class="go">&lt;class &#39;celery.concurrency.processes.TaskPool&#39;&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">symbol_by_name</span><span class="p">(</span><span class="s">&quot;default&quot;</span><span class="p">,</span> <span class="p">{</span>
+<span class="gp">... </span>    <span class="s">&quot;default&quot;</span><span class="p">:</span> <span class="s">&quot;celery.concurrency.processes.TaskPool&quot;</span><span class="p">})</span>
+<span class="go">&lt;class &#39;celery.concurrency.processes.TaskPool&#39;&gt;</span>
+</pre></div>
+</div>
+<p># Does not try to look up non-string names.
+&gt;&gt;&gt; from celery.concurrency.processes import TaskPool
+&gt;&gt;&gt; symbol_by_name(TaskPool) is TaskPool
+True</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.imports.instantiate">
+<tt class="descclassname">thriftpool.utils.imports.</tt><tt class="descname">instantiate</tt><big>(</big><em>name</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.utils.imports.instantiate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiate class by name.</p>
+<p>See <a class="reference internal" href="#thriftpool.utils.imports.symbol_by_name" title="thriftpool.utils.imports.symbol_by_name"><tt class="xref py py-func docutils literal"><span class="pre">symbol_by_name()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.imports.qualname">
+<tt class="descclassname">thriftpool.utils.imports.</tt><tt class="descname">qualname</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#thriftpool.utils.imports.qualname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.utils.logs">
+<span id="logs-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">logs</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.logs" title="Permalink to this headline">¶</a></h2>
+<p>Some useful tools for logging.</p>
+<p>This file was copied and adapted from celery.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body"><ol class="first loweralpha simple" start="3">
+<li>2009 - 2012 by Ask Solem.</li>
+</ol>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body"><p class="first last">BSD, see LICENSE for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="thriftpool.utils.logs.ColorFormatter">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.logs.</tt><tt class="descname">ColorFormatter</tt><big>(</big><em>fmt=None</em>, <em>datefmt=None</em>, <em>use_color=True</em><big>)</big><a class="headerlink" href="#thriftpool.utils.logs.ColorFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">logging.Formatter</span></tt></p>
+<dl class="attribute">
+<dt id="thriftpool.utils.logs.ColorFormatter.COLORS">
+<tt class="descname">COLORS</tt><em class="property"> = {'blue': &lt;bound method colored.blue of ''&gt;, 'black': &lt;bound method colored.black of ''&gt;, 'yellow': &lt;bound method colored.yellow of ''&gt;, 'cyan': &lt;bound method colored.cyan of ''&gt;, 'green': &lt;bound method colored.green of ''&gt;, 'magenta': &lt;bound method colored.magenta of ''&gt;, 'white': &lt;bound method colored.white of ''&gt;, 'red': &lt;bound method colored.red of ''&gt;}</em><a class="headerlink" href="#thriftpool.utils.logs.ColorFormatter.COLORS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loglevel -&gt; Color mapping.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.logs.ColorFormatter.colors">
+<tt class="descname">colors</tt><em class="property"> = {'DEBUG': &lt;bound method colored.blue of ''&gt;, 'CRITICAL': &lt;bound method colored.magenta of ''&gt;, 'WARNING': &lt;bound method colored.yellow of ''&gt;, 'ERROR': &lt;bound method colored.red of ''&gt;}</em><a class="headerlink" href="#thriftpool.utils.logs.ColorFormatter.colors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.logs.ColorFormatter.format">
+<tt class="descname">format</tt><big>(</big><em>record</em><big>)</big><a class="headerlink" href="#thriftpool.utils.logs.ColorFormatter.format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.logs.ColorFormatter.formatException">
+<tt class="descname">formatException</tt><big>(</big><em>ei</em><big>)</big><a class="headerlink" href="#thriftpool.utils.logs.ColorFormatter.formatException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.utils.logs.LoggingProxy">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.logs.</tt><tt class="descname">LoggingProxy</tt><big>(</big><em>logger</em>, <em>loglevel=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.logs.LoggingProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Forward file object to <tt class="xref py py-class docutils literal"><span class="pre">logging.Logger</span></tt> instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>logger</strong> &#8211; The <tt class="xref py py-class docutils literal"><span class="pre">logging.Logger</span></tt> instance to forward to.</li>
+<li><strong>loglevel</strong> &#8211; Loglevel to use when writing messages.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="thriftpool.utils.logs.LoggingProxy.close">
+<tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.logs.LoggingProxy.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>When the object is closed, no write requests are forwarded to
+the logging object anymore.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.logs.LoggingProxy.closed">
+<tt class="descname">closed</tt><em class="property"> = False</em><a class="headerlink" href="#thriftpool.utils.logs.LoggingProxy.closed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.logs.LoggingProxy.fileno">
+<tt class="descname">fileno</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.logs.LoggingProxy.fileno" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.logs.LoggingProxy.flush">
+<tt class="descname">flush</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.logs.LoggingProxy.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>This object is not buffered so any <a class="reference internal" href="#thriftpool.utils.logs.LoggingProxy.flush" title="thriftpool.utils.logs.LoggingProxy.flush"><tt class="xref py py-meth docutils literal"><span class="pre">flush()</span></tt></a> requests
+are ignored.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.logs.LoggingProxy.isatty">
+<tt class="descname">isatty</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.logs.LoggingProxy.isatty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Always returns <tt class="xref py py-const docutils literal"><span class="pre">False</span></tt>. Just here for file support.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.logs.LoggingProxy.loglevel">
+<tt class="descname">loglevel</tt><em class="property"> = 40</em><a class="headerlink" href="#thriftpool.utils.logs.LoggingProxy.loglevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.logs.LoggingProxy.mode">
+<tt class="descname">mode</tt><em class="property"> = 'w'</em><a class="headerlink" href="#thriftpool.utils.logs.LoggingProxy.mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.logs.LoggingProxy.name">
+<tt class="descname">name</tt><em class="property"> = None</em><a class="headerlink" href="#thriftpool.utils.logs.LoggingProxy.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.logs.LoggingProxy.write">
+<tt class="descname">write</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#thriftpool.utils.logs.LoggingProxy.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write message to logging object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.logs.LoggingProxy.writelines">
+<tt class="descname">writelines</tt><big>(</big><em>sequence</em><big>)</big><a class="headerlink" href="#thriftpool.utils.logs.LoggingProxy.writelines" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>writelines(sequence_of_strings) -&gt; None</cite>.</p>
+<p>Write the strings to the file.</p>
+<p>The sequence can be any iterable object producing strings.
+This is equivalent to calling <a class="reference internal" href="#thriftpool.utils.logs.LoggingProxy.write" title="thriftpool.utils.logs.LoggingProxy.write"><tt class="xref py py-meth docutils literal"><span class="pre">write()</span></tt></a> for each string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.utils.logs.LogsMixin">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.logs.</tt><tt class="descname">LogsMixin</tt><a class="headerlink" href="#thriftpool.utils.logs.LogsMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Simple helper for logging.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.utils.mixin">
+<span id="mixin-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">mixin</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.mixin" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="thriftpool.utils.mixin.SubclassMixin">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.mixin.</tt><tt class="descname">SubclassMixin</tt><a class="headerlink" href="#thriftpool.utils.mixin.SubclassMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="thriftpool.utils.mixin.SubclassMixin.subclass_with_self">
+<tt class="descname">subclass_with_self</tt><big>(</big><em>Class</em>, <em>name=None</em>, <em>attribute='app'</em>, <em>reverse=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#thriftpool.utils.mixin.SubclassMixin.subclass_with_self" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subclass an app-compatible class by setting its app attribute
+to be this app instance.</p>
+<p>App-compatible means that the class has a class attribute that
+provides the default app it should use, e.g.
+<tt class="docutils literal"><span class="pre">class</span> <span class="pre">Foo:</span> <span class="pre">app</span> <span class="pre">=</span> <span class="pre">None</span></tt>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>Class</strong> &#8211; The app-compatible class to subclass.</li>
+<li><strong>name</strong> &#8211; Custom name for the target class.</li>
+<li><strong>attribute</strong> &#8211; Name of the attribute holding the app,
+default is &#8216;app&#8217;.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.utils.other">
+<span id="other-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">other</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.other" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="thriftpool.utils.other.mk_temp_path">
+<tt class="descclassname">thriftpool.utils.other.</tt><tt class="descname">mk_temp_path</tt><big>(</big><em>prefix=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.other.mk_temp_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.other.cpu_count">
+<tt class="descclassname">thriftpool.utils.other.</tt><tt class="descname">cpu_count</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.other.cpu_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of CPUs in the system</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.other.setproctitle">
+<tt class="descclassname">thriftpool.utils.other.</tt><tt class="descname">setproctitle</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.other.setproctitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>setproctitle(title) &#8211; Change the process title.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.other.camelcase_to_underscore">
+<tt class="descclassname">thriftpool.utils.other.</tt><tt class="descname">camelcase_to_underscore</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.other.camelcase_to_underscore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert CamelCase to under_score.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.utils.signals">
+<span id="signals-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">signals</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.signals" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-thriftpool.utils.structures">
+<span id="structures-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">structures</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.structures" title="Permalink to this headline">¶</a></h2>
+<p>Some base structures.</p>
+<p>This file was copied and adapted from celery.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body"><ol class="first loweralpha simple" start="3">
+<li>2009 - 2012 by Ask Solem.</li>
+</ol>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body"><p class="first last">BSD, see LICENSE for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="thriftpool.utils.structures.DependencyGraph">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.structures.</tt><tt class="descname">DependencyGraph</tt><big>(</big><em>it=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.DependencyGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>A directed acyclic graph of objects and their dependencies.</p>
+<p>Supports a robust topological sort
+to detect the order in which they must be handled.</p>
+<p>Takes an optional iterator of <tt class="docutils literal"><span class="pre">(obj,</span> <span class="pre">dependencies)</span></tt>
+tuples to build the graph from.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Does not support cycle detection.</p>
+</div>
+<dl class="method">
+<dt id="thriftpool.utils.structures.DependencyGraph.add_arc">
+<tt class="descname">add_arc</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.DependencyGraph.add_arc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an object to the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.structures.DependencyGraph.add_edge">
+<tt class="descname">add_edge</tt><big>(</big><em>A</em>, <em>B</em><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.DependencyGraph.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an edge from object <tt class="docutils literal"><span class="pre">A</span></tt> to object <tt class="docutils literal"><span class="pre">B</span></tt>
+(<tt class="docutils literal"><span class="pre">A</span></tt> depends on <tt class="docutils literal"><span class="pre">B</span></tt>).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.structures.DependencyGraph.edges">
+<tt class="descname">edges</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.DependencyGraph.edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns generator that yields for all edges in the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.structures.DependencyGraph.items">
+<tt class="descname">items</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.DependencyGraph.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.structures.DependencyGraph.iteritems">
+<tt class="descname">iteritems</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.DependencyGraph.iteritems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.structures.DependencyGraph.repr_node">
+<tt class="descname">repr_node</tt><big>(</big><em>obj</em>, <em>level=1</em><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.DependencyGraph.repr_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.structures.DependencyGraph.to_dot">
+<tt class="descname">to_dot</tt><big>(</big><em>fh</em>, <em>ws='    '</em><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.DependencyGraph.to_dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the graph to DOT format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fh</strong> &#8211; A file, or a file-like object to write the graph to.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.structures.DependencyGraph.topsort">
+<tt class="descname">topsort</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.DependencyGraph.topsort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort the graph topologically.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a list of objects in the order
+in which they must be handled.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.structures.DependencyGraph.update">
+<tt class="descname">update</tt><big>(</big><em>it</em><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.DependencyGraph.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the graph with data from a list
+of <tt class="docutils literal"><span class="pre">(obj,</span> <span class="pre">dependencies)</span></tt> tuples.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.structures.DependencyGraph.valency_of">
+<tt class="descname">valency_of</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.DependencyGraph.valency_of" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the velency (degree) of a vertex in the graph.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.utils.structures.AttributeDict">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.structures.</tt><tt class="descname">AttributeDict</tt><a class="headerlink" href="#thriftpool.utils.structures.AttributeDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">dict</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.structures.AttributeDictMixin</span></tt></p>
+<p>Dict subclass with attribute access.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.utils.structures.AggregatedView">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.structures.</tt><tt class="descname">AggregatedView</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.AggregatedView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.structures.AttributeDictMixin</span></tt></p>
+<p>Combine multiple dictionary to one.</p>
+<dl class="method">
+<dt id="thriftpool.utils.structures.AggregatedView.add_default">
+<tt class="descname">add_default</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.AggregatedView.add_default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.structures.AggregatedView.items">
+<tt class="descname">items</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.AggregatedView.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.structures.AggregatedView.keys">
+<tt class="descname">keys</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.structures.AggregatedView.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.utils.term">
+<span id="term-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">term</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.term" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="celery-utils-term">
+<h3>celery.utils.term<a class="headerlink" href="#celery-utils-term" title="Permalink to this headline">¶</a></h3>
+<p>Terminals and colors.</p>
+<dl class="class">
+<dt id="thriftpool.utils.term.colored">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.term.</tt><tt class="descname">colored</tt><big>(</big><em>*s</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Terminal colored text.</p>
+<dl class="docutils">
+<dt>Example::</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">colored</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">red</span><span class="p">(</span><span class="s">&#39;the quick &#39;</span><span class="p">),</span> <span class="n">c</span><span class="o">.</span><span class="n">blue</span><span class="p">(</span><span class="s">&#39;brown &#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">bold</span><span class="p">(</span><span class="s">&#39;fox &#39;</span><span class="p">)),</span>
+<span class="gp">... </span>      <span class="n">c</span><span class="o">.</span><span class="n">magenta</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">underline</span><span class="p">(</span><span class="s">&#39;jumps over&#39;</span><span class="p">)),</span>
+<span class="gp">... </span>      <span class="n">c</span><span class="o">.</span><span class="n">yellow</span><span class="p">(</span><span class="s">&#39; the lazy &#39;</span><span class="p">),</span>
+<span class="gp">... </span>      <span class="n">c</span><span class="o">.</span><span class="n">green</span><span class="p">(</span><span class="s">&#39;dog &#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.black">
+<tt class="descname">black</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.black" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.blink">
+<tt class="descname">blink</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.blink" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.blue">
+<tt class="descname">blue</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.blue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.bold">
+<tt class="descname">bold</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.bold" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.bright">
+<tt class="descname">bright</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.bright" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.cyan">
+<tt class="descname">cyan</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.cyan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.embed">
+<tt class="descname">embed</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.embed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.green">
+<tt class="descname">green</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.green" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.iblue">
+<tt class="descname">iblue</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.iblue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.icyan">
+<tt class="descname">icyan</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.icyan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.igreen">
+<tt class="descname">igreen</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.igreen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.imagenta">
+<tt class="descname">imagenta</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.imagenta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.ired">
+<tt class="descname">ired</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.ired" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.iwhite">
+<tt class="descname">iwhite</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.iwhite" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.iyellow">
+<tt class="descname">iyellow</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.iyellow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.magenta">
+<tt class="descname">magenta</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.magenta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.no_color">
+<tt class="descname">no_color</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.no_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.node">
+<tt class="descname">node</tt><big>(</big><em>s</em>, <em>op</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.red">
+<tt class="descname">red</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.red" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.reset">
+<tt class="descname">reset</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.reverse">
+<tt class="descname">reverse</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.reverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.underline">
+<tt class="descname">underline</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.underline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.white">
+<tt class="descname">white</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.white" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.term.colored.yellow">
+<tt class="descname">yellow</tt><big>(</big><em>*s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.colored.yellow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.term.fg">
+<tt class="descclassname">thriftpool.utils.term.</tt><tt class="descname">fg</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.fg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-thriftpool.utils.threads">
+<span id="threads-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">threads</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.threads" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="thriftpool.utils.threads.DaemonThread">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.threads.</tt><tt class="descname">DaemonThread</tt><big>(</big><em>name=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.utils.threads.DaemonThread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></tt></p>
+<dl class="method">
+<dt id="thriftpool.utils.threads.DaemonThread.body">
+<tt class="descname">body</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.threads.DaemonThread.body" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.threads.DaemonThread.on_crash">
+<tt class="descname">on_crash</tt><big>(</big><em>msg</em>, <em>*fmt</em><big>)</big><a class="headerlink" href="#thriftpool.utils.threads.DaemonThread.on_crash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.threads.DaemonThread.run">
+<tt class="descname">run</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.threads.DaemonThread.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.threads.DaemonThread.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.threads.DaemonThread.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Graceful shutdown.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.utils.threads.LoopThread">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.threads.</tt><tt class="descname">LoopThread</tt><big>(</big><em>name=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.utils.threads.LoopThread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.utils.threads.DaemonThread" title="thriftpool.utils.threads.DaemonThread"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.threads.DaemonThread</span></tt></a></p>
+<dl class="method">
+<dt id="thriftpool.utils.threads.LoopThread.body">
+<tt class="descname">body</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.threads.LoopThread.body" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.threads.LoopThread.loop">
+<tt class="descname">loop</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.threads.LoopThread.loop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.threads.LoopThread.on_start">
+<tt class="descname">on_start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.threads.LoopThread.on_start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.threads.LoopThread.on_stop">
+<tt class="descname">on_stop</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.threads.LoopThread.on_stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.threads.LoopThread.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.threads.LoopThread.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Graceful shutdown.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.utils.threads.SimpleDaemonThread">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.threads.</tt><tt class="descname">SimpleDaemonThread</tt><big>(</big><em>target</em>, <em>name=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.utils.threads.SimpleDaemonThread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.utils.threads.DaemonThread" title="thriftpool.utils.threads.DaemonThread"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.threads.DaemonThread</span></tt></a></p>
+<dl class="method">
+<dt id="thriftpool.utils.threads.SimpleDaemonThread.body">
+<tt class="descname">body</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.threads.SimpleDaemonThread.body" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thriftpool.utils.dispatch.html">dispatch Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.dispatch.html#id1"><tt class="docutils literal"><span class="pre">dispatch</span></tt> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.dispatch.html#module-thriftpool.utils.dispatch.saferef"><tt class="docutils literal"><span class="pre">saferef</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.dispatch.html#module-thriftpool.utils.dispatch.signal"><tt class="docutils literal"><span class="pre">signal</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">utils Package</a><ul>
+<li><a class="reference internal" href="#module-thriftpool.utils.debug"><tt class="docutils literal"><span class="pre">debug</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.encoding"><tt class="docutils literal"><span class="pre">encoding</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.finalize"><tt class="docutils literal"><span class="pre">finalize</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.functional"><tt class="docutils literal"><span class="pre">functional</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.imports"><tt class="docutils literal"><span class="pre">imports</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.logs"><tt class="docutils literal"><span class="pre">logs</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.mixin"><tt class="docutils literal"><span class="pre">mixin</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.other"><tt class="docutils literal"><span class="pre">other</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.signals"><tt class="docutils literal"><span class="pre">signals</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.structures"><tt class="docutils literal"><span class="pre">structures</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.term"><tt class="docutils literal"><span class="pre">term</span></tt> Module</a><ul>
+<li><a class="reference internal" href="#celery-utils-term">celery.utils.term</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-thriftpool.utils.threads"><tt class="docutils literal"><span class="pre">threads</span></tt> Module</a></li>
+<li><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="thriftpool.remote.html"
+                        title="previous chapter">remote Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="thriftpool.utils.dispatch.html"
+                        title="next chapter">dispatch Package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/thriftpool.utils.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.utils.dispatch.html" title="dispatch Package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.remote.html" title="remote Package"
+             >previous</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api.html" >API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Lipin Dmitriy.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

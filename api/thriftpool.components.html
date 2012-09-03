@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>components Package &mdash; thriftpool 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="thriftpool 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="API Documentation" href="../api.html" />
+    <link rel="next" title="controllers Package" href="thriftpool.controllers.html" />
+    <link rel="prev" title="bin Package" href="thriftpool.bin.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.controllers.html" title="controllers Package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.bin.html" title="bin Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api.html" accesskey="U">API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="components-package">
+<h1>components Package<a class="headerlink" href="#components-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-thriftpool.components.base">
+<span id="base-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">base</span></tt> Module<a class="headerlink" href="#module-thriftpool.components.base" title="Permalink to this headline">¶</a></h2>
+<p>Implements components and boot-steps.</p>
+<p>This file was copied and adapted from celery.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body"><ol class="first loweralpha simple" start="3">
+<li>2009 - 2012 by Ask Solem.</li>
+</ol>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body"><p class="first last">BSD, see LICENSE for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="thriftpool.components.base.Component">
+<em class="property">class </em><tt class="descclassname">thriftpool.components.base.</tt><tt class="descname">Component</tt><big>(</big><em>parent</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.components.base.Component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>A component.</p>
+<p>The <tt class="xref py py-meth docutils literal"><span class="pre">__init__()</span></tt> method is called when the component
+is bound to a parent object, and can as such be used
+to initialize attributes in the parent object at
+parent instantiation-time.</p>
+<dl class="attribute">
+<dt id="thriftpool.components.base.Component.abstract">
+<tt class="descname">abstract</tt><em class="property"> = None</em><a class="headerlink" href="#thriftpool.components.base.Component.abstract" title="Permalink to this definition">¶</a></dt>
+<dd><p>if set the component will not be registered,
+but can be used as a component base class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.base.Component.create">
+<tt class="descname">create</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#thriftpool.components.base.Component.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the component.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.base.Component.enabled">
+<tt class="descname">enabled</tt><em class="property"> = True</em><a class="headerlink" href="#thriftpool.components.base.Component.enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This provides the default for <a class="reference internal" href="#thriftpool.components.base.Component.include_if" title="thriftpool.components.base.Component.include_if"><tt class="xref py py-meth docutils literal"><span class="pre">include_if()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.base.Component.include">
+<tt class="descname">include</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#thriftpool.components.base.Component.include" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.base.Component.include_if">
+<tt class="descname">include_if</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#thriftpool.components.base.Component.include_if" title="Permalink to this definition">¶</a></dt>
+<dd><p>An optional predicate that decided whether this
+component should be created.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.base.Component.instantiate">
+<tt class="descname">instantiate</tt><big>(</big><em>qualname</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.components.base.Component.instantiate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.base.Component.last">
+<tt class="descname">last</tt><em class="property"> = False</em><a class="headerlink" href="#thriftpool.components.base.Component.last" title="Permalink to this definition">¶</a></dt>
+<dd><p>This flag is reserved for the workers Consumer,
+since it is required to always be started last.
+There can only be one object marked with last
+in every namespace.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.base.Component.name">
+<tt class="descname">name</tt><em class="property"> = None</em><a class="headerlink" href="#thriftpool.components.base.Component.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the component, or the namespace
+and the name of the component separated by dot.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.base.Component.namespace">
+<tt class="descname">namespace</tt><em class="property"> = None</em><a class="headerlink" href="#thriftpool.components.base.Component.namespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>can be used to specify the namespace,
+if the name does not include it.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.base.Component.obj">
+<tt class="descname">obj</tt><em class="property"> = None</em><a class="headerlink" href="#thriftpool.components.base.Component.obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional obj created by the <a class="reference internal" href="#thriftpool.components.base.Component.create" title="thriftpool.components.base.Component.create"><tt class="xref py py-meth docutils literal"><span class="pre">create()</span></tt></a> method.
+This is used by StartStopComponents to keep the
+original service object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.base.Component.requires">
+<tt class="descname">requires</tt><em class="property"> = ()</em><a class="headerlink" href="#thriftpool.components.base.Component.requires" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of component names this component depends on.
+Note that the dependencies must be in the same namespace.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.components.base.ComponentType">
+<em class="property">class </em><tt class="descclassname">thriftpool.components.base.</tt><tt class="descname">ComponentType</tt><a class="headerlink" href="#thriftpool.components.base.ComponentType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">type</span></tt></p>
+<p>Metaclass for components.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.components.base.Namespace">
+<em class="property">class </em><tt class="descclassname">thriftpool.components.base.</tt><tt class="descname">Namespace</tt><big>(</big><em>name=None</em>, <em>app=None</em><big>)</big><a class="headerlink" href="#thriftpool.components.base.Namespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="thriftpool.utils.html#thriftpool.utils.logs.LogsMixin" title="thriftpool.utils.logs.LogsMixin"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.logs.LogsMixin</span></tt></a></p>
+<p>A namespace containing components.</p>
+<p>Every component must belong to a namespace.</p>
+<p>When component classes are created they are added to the
+mapping of unclaimed components.  The components will be
+claimed when the namespace they belong to is created.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; Set the name of this namespace.</li>
+<li><strong>app</strong> &#8211; Set the Celery app for this namespace.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="thriftpool.components.base.Namespace.apply">
+<tt class="descname">apply</tt><big>(</big><em>parent</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.components.base.Namespace.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the components in this namespace to an object.</p>
+<p>This will apply the <tt class="docutils literal"><span class="pre">__init__</span></tt> and <tt class="docutils literal"><span class="pre">include</span></tt> methods
+of each components with the object as argument.</p>
+<p>For <tt class="docutils literal"><span class="pre">StartStopComponents</span></tt> the services created
+will also be added the the objects <tt class="docutils literal"><span class="pre">components</span></tt> attribute.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.base.Namespace.bind_component">
+<tt class="descname">bind_component</tt><big>(</big><em>name</em>, <em>parent</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.components.base.Namespace.bind_component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bind component to parent object and this namespace.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.base.Namespace.import_module">
+<tt class="descname">import_module</tt><big>(</big><em>module</em><big>)</big><a class="headerlink" href="#thriftpool.components.base.Namespace.import_module" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.base.Namespace.load_modules">
+<tt class="descname">load_modules</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.base.Namespace.load_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will load the component modules this namespace depends on.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.base.Namespace.modules">
+<tt class="descname">modules</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.base.Namespace.modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subclasses can override this to return a
+list of modules to import before components are claimed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.base.Namespace.name">
+<tt class="descname">name</tt><em class="property"> = None</em><a class="headerlink" href="#thriftpool.components.base.Namespace.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.components.base.StartStopComponent">
+<em class="property">class </em><tt class="descclassname">thriftpool.components.base.</tt><tt class="descname">StartStopComponent</tt><big>(</big><em>parent</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.components.base.StartStopComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.components.base.Component" title="thriftpool.components.base.Component"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.components.base.Component</span></tt></a></p>
+<dl class="method">
+<dt id="thriftpool.components.base.StartStopComponent.include">
+<tt class="descname">include</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#thriftpool.components.base.StartStopComponent.include" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.base.StartStopComponent.start">
+<tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.base.StartStopComponent.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.base.StartStopComponent.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.base.StartStopComponent.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.base.StartStopComponent.terminable">
+<tt class="descname">terminable</tt><em class="property"> = False</em><a class="headerlink" href="#thriftpool.components.base.StartStopComponent.terminable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.base.StartStopComponent.terminate">
+<tt class="descname">terminate</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.base.StartStopComponent.terminate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.components.event_loop">
+<span id="event-loop-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">event_loop</span></tt> Module<a class="headerlink" href="#module-thriftpool.components.event_loop" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="thriftpool.components.event_loop.EventLoopComponent">
+<em class="property">class </em><tt class="descclassname">thriftpool.components.event_loop.</tt><tt class="descname">EventLoopComponent</tt><big>(</big><em>parent</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.components.event_loop.EventLoopComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.components.base.StartStopComponent" title="thriftpool.components.base.StartStopComponent"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.components.base.StartStopComponent</span></tt></a></p>
+<dl class="method">
+<dt id="thriftpool.components.event_loop.EventLoopComponent.create">
+<tt class="descname">create</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#thriftpool.components.event_loop.EventLoopComponent.create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.event_loop.EventLoopComponent.name">
+<tt class="descname">name</tt><em class="property"> = 'event_loop'</em><a class="headerlink" href="#thriftpool.components.event_loop.EventLoopComponent.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.event_loop.EventLoopComponent.namespace">
+<tt class="descname">namespace</tt><em class="property"> = 'orchestrator'</em><a class="headerlink" href="#thriftpool.components.event_loop.EventLoopComponent.namespace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.event_loop.EventLoopComponent.requiries">
+<tt class="descname">requiries</tt><em class="property"> = ('worker_pool',)</em><a class="headerlink" href="#thriftpool.components.event_loop.EventLoopComponent.requiries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.components.event_loop.EventLoopProxy">
+<em class="property">class </em><tt class="descclassname">thriftpool.components.event_loop.</tt><tt class="descname">EventLoopProxy</tt><big>(</big><em>app</em><big>)</big><a class="headerlink" href="#thriftpool.components.event_loop.EventLoopProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Proxy to <tt class="xref py py-class docutils literal"><span class="pre">socket_zmq.loop.LoopContainer</span></tt>.</p>
+<p>We should create all instance as later as possible.</p>
+<dl class="attribute">
+<dt id="thriftpool.components.event_loop.EventLoopProxy.loop_container">
+<tt class="descname">loop_container</tt><a class="headerlink" href="#thriftpool.components.event_loop.EventLoopProxy.loop_container" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get loop container from application.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.event_loop.EventLoopProxy.start">
+<tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.event_loop.EventLoopProxy.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start loop container.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.event_loop.EventLoopProxy.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.event_loop.EventLoopProxy.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop loop container.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.components.listener_pool">
+<span id="listener-pool-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">listener_pool</span></tt> Module<a class="headerlink" href="#module-thriftpool.components.listener_pool" title="Permalink to this headline">¶</a></h2>
+<p>Contains component that hold listener pool.</p>
+<dl class="class">
+<dt id="thriftpool.components.listener_pool.ListenerPool">
+<em class="property">class </em><tt class="descclassname">thriftpool.components.listener_pool.</tt><tt class="descname">ListenerPool</tt><big>(</big><em>app</em><big>)</big><a class="headerlink" href="#thriftpool.components.listener_pool.ListenerPool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="thriftpool.utils.html#thriftpool.utils.logs.LogsMixin" title="thriftpool.utils.logs.LogsMixin"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.logs.LogsMixin</span></tt></a></p>
+<p>Maintain pool of listeners. When listener starts it open all needed
+sockets and connect to workers. Event loop should be started before
+listeners starts.</p>
+<dl class="attribute">
+<dt id="thriftpool.components.listener_pool.ListenerPool.Listener">
+<tt class="descname">Listener</tt><a class="headerlink" href="#thriftpool.components.listener_pool.ListenerPool.Listener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shortcut to <tt class="xref py py-class docutils literal"><span class="pre">socket_zmq.listener.Listener</span></tt> class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.listener_pool.ListenerPool.register">
+<tt class="descname">register</tt><big>(</big><em>name</em>, <em>host</em>, <em>port</em>, <em>backlog=None</em><big>)</big><a class="headerlink" href="#thriftpool.components.listener_pool.ListenerPool.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register new listener with given parameters.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.listener_pool.ListenerPool.start">
+<tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.listener_pool.ListenerPool.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start all registered listeners.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.listener_pool.ListenerPool.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.listener_pool.ListenerPool.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop all registered listeners.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.components.listener_pool.ListenerPoolComponent">
+<em class="property">class </em><tt class="descclassname">thriftpool.components.listener_pool.</tt><tt class="descname">ListenerPoolComponent</tt><big>(</big><em>parent</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.components.listener_pool.ListenerPoolComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.components.base.StartStopComponent" title="thriftpool.components.base.StartStopComponent"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.components.base.StartStopComponent</span></tt></a></p>
+<dl class="method">
+<dt id="thriftpool.components.listener_pool.ListenerPoolComponent.create">
+<tt class="descname">create</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#thriftpool.components.listener_pool.ListenerPoolComponent.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new <a class="reference internal" href="#thriftpool.components.listener_pool.ListenerPool" title="thriftpool.components.listener_pool.ListenerPool"><tt class="xref py py-class docutils literal"><span class="pre">ListenerPool</span></tt></a> instance. Create existed
+listeners.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.listener_pool.ListenerPoolComponent.name">
+<tt class="descname">name</tt><em class="property"> = 'listener_pool'</em><a class="headerlink" href="#thriftpool.components.listener_pool.ListenerPoolComponent.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.listener_pool.ListenerPoolComponent.namespace">
+<tt class="descname">namespace</tt><em class="property"> = 'orchestrator'</em><a class="headerlink" href="#thriftpool.components.listener_pool.ListenerPoolComponent.namespace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.listener_pool.ListenerPoolComponent.requires">
+<tt class="descname">requires</tt><em class="property"> = ('event_loop',)</em><a class="headerlink" href="#thriftpool.components.listener_pool.ListenerPoolComponent.requires" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.components.worker_pool">
+<span id="worker-pool-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">worker_pool</span></tt> Module<a class="headerlink" href="#module-thriftpool.components.worker_pool" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="thriftpool.components.worker_pool.WorkerContainer">
+<em class="property">class </em><tt class="descclassname">thriftpool.components.worker_pool.</tt><tt class="descname">WorkerContainer</tt><big>(</big><em>worker</em><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="thriftpool.utils.html#thriftpool.utils.threads.DaemonThread" title="thriftpool.utils.threads.DaemonThread"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.threads.DaemonThread</span></tt></a></p>
+<dl class="method">
+<dt id="thriftpool.components.worker_pool.WorkerContainer.body">
+<tt class="descname">body</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerContainer.body" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.worker_pool.WorkerContainer.endpoint">
+<tt class="descname">endpoint</tt><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerContainer.endpoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.worker_pool.WorkerContainer.start">
+<tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerContainer.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.worker_pool.WorkerContainer.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerContainer.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.components.worker_pool.WorkerPool">
+<em class="property">class </em><tt class="descclassname">thriftpool.components.worker_pool.</tt><tt class="descname">WorkerPool</tt><big>(</big><em>app</em>, <em>count=None</em><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="thriftpool.utils.html#thriftpool.utils.logs.LogsMixin" title="thriftpool.utils.logs.LogsMixin"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.logs.LogsMixin</span></tt></a>, <a class="reference internal" href="thriftpool.utils.html#thriftpool.utils.mixin.SubclassMixin" title="thriftpool.utils.mixin.SubclassMixin"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.mixin.SubclassMixin</span></tt></a></p>
+<p>Maintain pool of hub threads.</p>
+<dl class="attribute">
+<dt id="thriftpool.components.worker_pool.WorkerPool.Worker">
+<tt class="descname">Worker</tt><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool.Worker" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.components.worker_pool.WorkerPool.WorkerContainer">
+<em class="property">class </em><tt class="descname">WorkerContainer</tt><big>(</big><em>worker</em><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool.WorkerContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="thriftpool.utils.html#thriftpool.utils.threads.DaemonThread" title="thriftpool.utils.threads.DaemonThread"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.threads.DaemonThread</span></tt></a></p>
+<dl class="method">
+<dt id="thriftpool.components.worker_pool.WorkerPool.WorkerContainer.body">
+<tt class="descname">body</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool.WorkerContainer.body" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.worker_pool.WorkerPool.WorkerContainer.endpoint">
+<tt class="descname">endpoint</tt><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool.WorkerContainer.endpoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.worker_pool.WorkerPool.WorkerContainer.start">
+<tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool.WorkerContainer.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.worker_pool.WorkerPool.WorkerContainer.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool.WorkerContainer.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.worker_pool.WorkerPool.endpoints">
+<tt class="descclassname">WorkerPool.</tt><tt class="descname">endpoints</tt><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool.endpoints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.worker_pool.WorkerPool.register">
+<tt class="descclassname">WorkerPool.</tt><tt class="descname">register</tt><big>(</big><em>name</em>, <em>processor</em><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool.register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.worker_pool.WorkerPool.start">
+<tt class="descclassname">WorkerPool.</tt><tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.components.worker_pool.WorkerPool.stop">
+<tt class="descclassname">WorkerPool.</tt><tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.components.worker_pool.WorkerPoolComponent">
+<em class="property">class </em><tt class="descclassname">thriftpool.components.worker_pool.</tt><tt class="descname">WorkerPoolComponent</tt><big>(</big><em>parent</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPoolComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.components.base.StartStopComponent" title="thriftpool.components.base.StartStopComponent"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.components.base.StartStopComponent</span></tt></a></p>
+<dl class="method">
+<dt id="thriftpool.components.worker_pool.WorkerPoolComponent.create">
+<tt class="descname">create</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPoolComponent.create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.worker_pool.WorkerPoolComponent.name">
+<tt class="descname">name</tt><em class="property"> = 'worker_pool'</em><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPoolComponent.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.components.worker_pool.WorkerPoolComponent.namespace">
+<tt class="descname">namespace</tt><em class="property"> = 'orchestrator'</em><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPoolComponent.namespace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">components Package</a><ul>
+<li><a class="reference internal" href="#module-thriftpool.components.base"><tt class="docutils literal"><span class="pre">base</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.components.event_loop"><tt class="docutils literal"><span class="pre">event_loop</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.components.listener_pool"><tt class="docutils literal"><span class="pre">listener_pool</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.components.worker_pool"><tt class="docutils literal"><span class="pre">worker_pool</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="thriftpool.bin.html"
+                        title="previous chapter">bin Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="thriftpool.controllers.html"
+                        title="next chapter">controllers Package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/thriftpool.components.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.controllers.html" title="controllers Package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.bin.html" title="bin Package"
+             >previous</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api.html" >API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Lipin Dmitriy.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

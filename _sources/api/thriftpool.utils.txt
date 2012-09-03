@@ -1,0 +1,106 @@
+utils Package
+=============
+
+:mod:`debug` Module
+-------------------
+
+.. automodule:: thriftpool.utils.debug
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`encoding` Module
+----------------------
+
+.. automodule:: thriftpool.utils.encoding
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`finalize` Module
+----------------------
+
+.. automodule:: thriftpool.utils.finalize
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`functional` Module
+------------------------
+
+.. automodule:: thriftpool.utils.functional
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`imports` Module
+---------------------
+
+.. automodule:: thriftpool.utils.imports
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`logs` Module
+------------------
+
+.. automodule:: thriftpool.utils.logs
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`mixin` Module
+-------------------
+
+.. automodule:: thriftpool.utils.mixin
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`other` Module
+-------------------
+
+.. automodule:: thriftpool.utils.other
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`signals` Module
+---------------------
+
+.. automodule:: thriftpool.utils.signals
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`structures` Module
+------------------------
+
+.. automodule:: thriftpool.utils.structures
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`term` Module
+------------------
+
+.. automodule:: thriftpool.utils.term
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`threads` Module
+---------------------
+
+.. automodule:: thriftpool.utils.threads
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+
+    thriftpool.utils.dispatch
+

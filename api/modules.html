@@ -1,0 +1,161 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>thriftpool &mdash; thriftpool 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="thriftpool 0.0.1 documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="thriftpool">
+<h1>thriftpool<a class="headerlink" href="#thriftpool" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="thriftpool.html">thriftpool Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.html#id1"><tt class="docutils literal"><span class="pre">thriftpool</span></tt> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.html#module-thriftpool.exceptions"><tt class="docutils literal"><span class="pre">exceptions</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.html#module-thriftpool.handlers"><tt class="docutils literal"><span class="pre">handlers</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.html#module-thriftpool.signals"><tt class="docutils literal"><span class="pre">signals</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="thriftpool.app.html">app Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.app.html#module-thriftpool.app.base"><tt class="docutils literal"><span class="pre">base</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.app.html#module-thriftpool.app.config"><tt class="docutils literal"><span class="pre">config</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.app.html#module-thriftpool.app.loader"><tt class="docutils literal"><span class="pre">loader</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.app.html#module-thriftpool.app.log"><tt class="docutils literal"><span class="pre">log</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.app.html#module-thriftpool.app.slots"><tt class="docutils literal"><span class="pre">slots</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="thriftpool.bin.html">bin Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.bin.html#module-thriftpool.bin.thriftpool"><tt class="docutils literal"><span class="pre">thriftpool</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.bin.html#module-thriftpool.bin.thriftpoold"><tt class="docutils literal"><span class="pre">thriftpoold</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="thriftpool.components.html">components Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.components.html#module-thriftpool.components.base"><tt class="docutils literal"><span class="pre">base</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.components.html#module-thriftpool.components.event_loop"><tt class="docutils literal"><span class="pre">event_loop</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.components.html#module-thriftpool.components.listener_pool"><tt class="docutils literal"><span class="pre">listener_pool</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.components.html#module-thriftpool.components.worker_pool"><tt class="docutils literal"><span class="pre">worker_pool</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="thriftpool.controllers.html">controllers Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.controllers.html#module-thriftpool.controllers.base"><tt class="docutils literal"><span class="pre">base</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.controllers.html#module-thriftpool.controllers.orchestrator"><tt class="docutils literal"><span class="pre">orchestrator</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="thriftpool.remote.html">remote Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.remote.html#id1"><tt class="docutils literal"><span class="pre">remote</span></tt> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.remote.html#module-thriftpool.remote.ThriftPool"><tt class="docutils literal"><span class="pre">ThriftPool</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.remote.html#module-thriftpool.remote.constants"><tt class="docutils literal"><span class="pre">constants</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.remote.html#module-thriftpool.remote.handler"><tt class="docutils literal"><span class="pre">handler</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.remote.html#module-thriftpool.remote.ttypes"><tt class="docutils literal"><span class="pre">ttypes</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="thriftpool.utils.html">utils Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.debug"><tt class="docutils literal"><span class="pre">debug</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.encoding"><tt class="docutils literal"><span class="pre">encoding</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.finalize"><tt class="docutils literal"><span class="pre">finalize</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.functional"><tt class="docutils literal"><span class="pre">functional</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.imports"><tt class="docutils literal"><span class="pre">imports</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.logs"><tt class="docutils literal"><span class="pre">logs</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.mixin"><tt class="docutils literal"><span class="pre">mixin</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.other"><tt class="docutils literal"><span class="pre">other</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.signals"><tt class="docutils literal"><span class="pre">signals</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.structures"><tt class="docutils literal"><span class="pre">structures</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.term"><tt class="docutils literal"><span class="pre">term</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.threads"><tt class="docutils literal"><span class="pre">threads</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="thriftpool.utils.html#subpackages">Subpackages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/modules.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Lipin Dmitriy.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

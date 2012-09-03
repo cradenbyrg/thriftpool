@@ -1,0 +1,19 @@
+controllers Package
+===================
+
+:mod:`base` Module
+------------------
+
+.. automodule:: thriftpool.controllers.base
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`orchestrator` Module
+--------------------------
+
+.. automodule:: thriftpool.controllers.orchestrator
+    :members:
+    :undoc-members:
+    :show-inheritance:
+

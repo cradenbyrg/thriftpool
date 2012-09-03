@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>controllers Package &mdash; thriftpool 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="thriftpool 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="API Documentation" href="../api.html" />
+    <link rel="next" title="remote Package" href="thriftpool.remote.html" />
+    <link rel="prev" title="components Package" href="thriftpool.components.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.remote.html" title="remote Package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.components.html" title="components Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api.html" accesskey="U">API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="controllers-package">
+<h1>controllers Package<a class="headerlink" href="#controllers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-thriftpool.controllers.base">
+<span id="base-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">base</span></tt> Module<a class="headerlink" href="#module-thriftpool.controllers.base" title="Permalink to this headline">¶</a></h2>
+<p>Implements controllers.</p>
+<p>This file was copied and adapted from celery.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body"><ol class="first loweralpha simple" start="3">
+<li>2009 - 2012 by Ask Solem.</li>
+</ol>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body"><p class="first last">BSD, see LICENSE for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="thriftpool.controllers.base.Controller">
+<em class="property">class </em><tt class="descclassname">thriftpool.controllers.base.</tt><tt class="descname">Controller</tt><a class="headerlink" href="#thriftpool.controllers.base.Controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="thriftpool.utils.html#thriftpool.utils.logs.LogsMixin" title="thriftpool.utils.logs.LogsMixin"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.logs.LogsMixin</span></tt></a></p>
+<dl class="attribute">
+<dt id="thriftpool.controllers.base.Controller.CLOSED">
+<tt class="descname">CLOSED</tt><em class="property"> = 2</em><a class="headerlink" href="#thriftpool.controllers.base.Controller.CLOSED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.controllers.base.Controller.Namespace">
+<em class="property">class </em><tt class="descname">Namespace</tt><big>(</big><em>name=None</em>, <em>app=None</em><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.Namespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="thriftpool.utils.html#thriftpool.utils.logs.LogsMixin" title="thriftpool.utils.logs.LogsMixin"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.logs.LogsMixin</span></tt></a></p>
+<p>A namespace containing components.</p>
+<p>Every component must belong to a namespace.</p>
+<p>When component classes are created they are added to the
+mapping of unclaimed components.  The components will be
+claimed when the namespace they belong to is created.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; Set the name of this namespace.</li>
+<li><strong>app</strong> &#8211; Set the Celery app for this namespace.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="thriftpool.controllers.base.Controller.Namespace.apply">
+<tt class="descname">apply</tt><big>(</big><em>parent</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.Namespace.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the components in this namespace to an object.</p>
+<p>This will apply the <tt class="docutils literal"><span class="pre">__init__</span></tt> and <tt class="docutils literal"><span class="pre">include</span></tt> methods
+of each components with the object as argument.</p>
+<p>For <tt class="docutils literal"><span class="pre">StartStopComponents</span></tt> the services created
+will also be added the the objects <tt class="docutils literal"><span class="pre">components</span></tt> attribute.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.base.Controller.Namespace.bind_component">
+<tt class="descname">bind_component</tt><big>(</big><em>name</em>, <em>parent</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.Namespace.bind_component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bind component to parent object and this namespace.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.base.Controller.Namespace.import_module">
+<tt class="descname">import_module</tt><big>(</big><em>module</em><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.Namespace.import_module" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.base.Controller.Namespace.load_modules">
+<tt class="descname">load_modules</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.Namespace.load_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will load the component modules this namespace depends on.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.base.Controller.Namespace.modules">
+<tt class="descname">modules</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.Namespace.modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subclasses can override this to return a
+list of modules to import before components are claimed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.controllers.base.Controller.Namespace.name">
+<tt class="descname">name</tt><em class="property"> = None</em><a class="headerlink" href="#thriftpool.controllers.base.Controller.Namespace.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.controllers.base.Controller.RUNNING">
+<tt class="descclassname">Controller.</tt><tt class="descname">RUNNING</tt><em class="property"> = 1</em><a class="headerlink" href="#thriftpool.controllers.base.Controller.RUNNING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.controllers.base.Controller.TERMINATED">
+<tt class="descclassname">Controller.</tt><tt class="descname">TERMINATED</tt><em class="property"> = 3</em><a class="headerlink" href="#thriftpool.controllers.base.Controller.TERMINATED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.base.Controller.after_start">
+<tt class="descclassname">Controller.</tt><tt class="descname">after_start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.after_start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.controllers.base.Controller.app">
+<tt class="descclassname">Controller.</tt><tt class="descname">app</tt><em class="property"> = None</em><a class="headerlink" href="#thriftpool.controllers.base.Controller.app" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.base.Controller.on_before_init">
+<tt class="descclassname">Controller.</tt><tt class="descname">on_before_init</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.on_before_init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.base.Controller.on_shutdown">
+<tt class="descclassname">Controller.</tt><tt class="descname">on_shutdown</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.on_shutdown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.base.Controller.on_start">
+<tt class="descclassname">Controller.</tt><tt class="descname">on_start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.on_start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.base.Controller.register_signal_handler">
+<tt class="descclassname">Controller.</tt><tt class="descname">register_signal_handler</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.register_signal_handler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.controllers.base.Controller.register_signals">
+<tt class="descclassname">Controller.</tt><tt class="descname">register_signals</tt><em class="property"> = True</em><a class="headerlink" href="#thriftpool.controllers.base.Controller.register_signals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.base.Controller.start">
+<tt class="descclassname">Controller.</tt><tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.base.Controller.stop">
+<tt class="descclassname">Controller.</tt><tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Graceful shutdown of the worker server.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.base.Controller.terminate">
+<tt class="descclassname">Controller.</tt><tt class="descname">terminate</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.base.Controller.terminate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Not so graceful shutdown of the worker server.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.controllers.base.Controller.wait_for_shutdown">
+<tt class="descclassname">Controller.</tt><tt class="descname">wait_for_shutdown</tt><em class="property"> = True</em><a class="headerlink" href="#thriftpool.controllers.base.Controller.wait_for_shutdown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.controllers.orchestrator">
+<span id="orchestrator-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">orchestrator</span></tt> Module<a class="headerlink" href="#module-thriftpool.controllers.orchestrator" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="thriftpool.controllers.orchestrator.OrchestratorController">
+<em class="property">class </em><tt class="descclassname">thriftpool.controllers.orchestrator.</tt><tt class="descname">OrchestratorController</tt><a class="headerlink" href="#thriftpool.controllers.orchestrator.OrchestratorController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.controllers.base.Controller" title="thriftpool.controllers.base.Controller"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.controllers.base.Controller</span></tt></a></p>
+<dl class="attribute">
+<dt id="thriftpool.controllers.orchestrator.OrchestratorController.Namespace">
+<tt class="descname">Namespace</tt><a class="headerlink" href="#thriftpool.controllers.orchestrator.OrchestratorController.Namespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">OrchestratorNamespace</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.orchestrator.OrchestratorController.after_start">
+<tt class="descname">after_start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.orchestrator.OrchestratorController.after_start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.orchestrator.OrchestratorController.on_before_init">
+<tt class="descname">on_before_init</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.orchestrator.OrchestratorController.on_before_init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.orchestrator.OrchestratorController.on_shutdown">
+<tt class="descname">on_shutdown</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.orchestrator.OrchestratorController.on_shutdown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.controllers.orchestrator.OrchestratorController.on_start">
+<tt class="descname">on_start</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.controllers.orchestrator.OrchestratorController.on_start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">controllers Package</a><ul>
+<li><a class="reference internal" href="#module-thriftpool.controllers.base"><tt class="docutils literal"><span class="pre">base</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.controllers.orchestrator"><tt class="docutils literal"><span class="pre">orchestrator</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="thriftpool.components.html"
+                        title="previous chapter">components Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="thriftpool.remote.html"
+                        title="next chapter">remote Package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/thriftpool.controllers.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.remote.html" title="remote Package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.components.html" title="components Package"
+             >previous</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api.html" >API Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Lipin Dmitriy.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

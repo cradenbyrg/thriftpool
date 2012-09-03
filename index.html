@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to thriftpool’s documentation! &mdash; thriftpool 0.0.1 documentation</title>
+    <title>ThriftPool &mdash; thriftpool 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,7 +25,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="thriftpool 0.0.1 documentation" href="#" /> 
+    <link rel="top" title="thriftpool 0.0.1 documentation" href="#" />
+    <link rel="next" title="API Documentation" href="api.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,6 +35,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="API Documentation"
+             accesskey="N">next</a> |</li>
         <li><a href="#">thriftpool 0.0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -43,11 +50,28 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="welcome-to-thriftpool-s-documentation">
-<h1>Welcome to thriftpool&#8217;s documentation!<a class="headerlink" href="#welcome-to-thriftpool-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="thriftpool">
+<h1>ThriftPool<a class="headerlink" href="#thriftpool" title="Permalink to this headline">¶</a></h1>
+<p><cite>ThriftPool</cite> is an application server for <a class="reference external" href="http://thrift.apache.org/">Thrift</a> services. It should create needed
+sockets, start workers, serve requests from client and log them. It use <a class="reference external" href="http://code.google.com/p/pyev/">pyev</a> as
+wrapper for <a class="reference external" href="http://software.schmorp.de/pkg/libev.html">libev</a> and <a class="reference external" href="http://zeromq.github.com/pyzmq/">ØMQ</a> for load balancing between workers. Request processing
+written in <a class="reference external" href="http://www.cython.org/">Cython</a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Currently it support only Thrift Framed protocol.</p>
+</div>
+<p>Key features:</p>
 <ul class="simple">
+<li>Fast request processing (~4000 rps);</li>
+<li>Compatibility with gevent through monkey patching;</li>
+<li>Support request logging;</li>
+</ul>
+</div>
+<div class="section" id="reference-docs">
+<h1>Reference Docs<a class="headerlink" href="#reference-docs" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
 </ul>
 </div>
 </div>
@@ -59,6 +83,10 @@
 <li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
 </ul>
 </div>
+<div class="section" id="license">
+<h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
+<p><cite>ThriftPool</cite> is open source and licensed under <a class="reference external" href="http://www.opensource.org/licenses/BSD-3-Clause">BSD License</a>.</p>
+</div>
 
 
           </div>
@@ -68,12 +96,17 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Welcome to thriftpool&#8217;s documentation!</a><ul>
+<li><a class="reference internal" href="#">ThriftPool</a></li>
+<li><a class="reference internal" href="#reference-docs">Reference Docs</a><ul>
 </ul>
 </li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
 </ul>
 
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">API Documentation</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/index.txt"
@@ -102,6 +135,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="API Documentation"
+             >next</a> |</li>
         <li><a href="#">thriftpool 0.0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>

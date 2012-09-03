@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dispatch Package &mdash; thriftpool 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="thriftpool 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="utils Package" href="thriftpool.utils.html" />
+    <link rel="prev" title="utils Package" href="thriftpool.utils.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.utils.html" title="utils Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api.html" >API Documentation</a> &raquo;</li>
+          <li><a href="thriftpool.utils.html" accesskey="U">utils Package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="dispatch-package">
+<h1>dispatch Package<a class="headerlink" href="#dispatch-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><tt class="xref py py-mod docutils literal"><span class="pre">dispatch</span></tt> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-thriftpool.utils.dispatch"></span></div>
+<div class="section" id="module-thriftpool.utils.dispatch.saferef">
+<span id="saferef-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">saferef</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.dispatch.saferef" title="Permalink to this headline">¶</a></h2>
+<p>&#8220;Safe weakrefs&#8221;, originally from pyDispatcher.</p>
+<p>Provides a way to safely weakref any function, including bound methods (which
+aren&#8217;t handled by the core weakref module).</p>
+<dl class="class">
+<dt id="thriftpool.utils.dispatch.saferef.BoundMethodWeakref">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.dispatch.saferef.</tt><tt class="descname">BoundMethodWeakref</tt><big>(</big><em>target</em>, <em>on_delete=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.dispatch.saferef.BoundMethodWeakref" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>&#8216;Safe&#8217; and reusable weak references to instance methods.</p>
+<p>BoundMethodWeakref objects provide a mechanism for
+referencing a bound method without requiring that the
+method object itself (which is normally a transient
+object) is kept alive.  Instead, the BoundMethodWeakref
+object keeps weak references to both the object and the
+function which together define the instance method.</p>
+<dl class="attribute">
+<dt id="thriftpool.utils.dispatch.saferef.BoundMethodWeakref.key">
+<tt class="descname">key</tt><a class="headerlink" href="#thriftpool.utils.dispatch.saferef.BoundMethodWeakref.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>the identity key for the reference, calculated
+by the class&#8217;s <a class="reference internal" href="#thriftpool.utils.dispatch.saferef.BoundMethodWeakref.calculate_key" title="thriftpool.utils.dispatch.saferef.BoundMethodWeakref.calculate_key"><tt class="xref py py-meth docutils literal"><span class="pre">calculate_key()</span></tt></a> method applied to the
+target instance method</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.dispatch.saferef.BoundMethodWeakref.deletion_methods">
+<tt class="descname">deletion_methods</tt><a class="headerlink" href="#thriftpool.utils.dispatch.saferef.BoundMethodWeakref.deletion_methods" title="Permalink to this definition">¶</a></dt>
+<dd><p>sequence of callable objects taking
+single argument, a reference to this object which
+will be called when <em>either</em> the target object or
+target function is garbage collected (i.e. when
+this object becomes invalid).  These are specified
+as the on_delete parameters of <a class="reference internal" href="#thriftpool.utils.dispatch.saferef.safe_ref" title="thriftpool.utils.dispatch.saferef.safe_ref"><tt class="xref py py-func docutils literal"><span class="pre">safe_ref()</span></tt></a> calls.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.dispatch.saferef.BoundMethodWeakref.weak_self">
+<tt class="descname">weak_self</tt><a class="headerlink" href="#thriftpool.utils.dispatch.saferef.BoundMethodWeakref.weak_self" title="Permalink to this definition">¶</a></dt>
+<dd><p>weak reference to the target object</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.dispatch.saferef.BoundMethodWeakref.weak_func">
+<tt class="descname">weak_func</tt><a class="headerlink" href="#thriftpool.utils.dispatch.saferef.BoundMethodWeakref.weak_func" title="Permalink to this definition">¶</a></dt>
+<dd><p>weak reference to the target function</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.dispatch.saferef.BoundMethodWeakref._all_instances">
+<tt class="descname">_all_instances</tt><a class="headerlink" href="#thriftpool.utils.dispatch.saferef.BoundMethodWeakref._all_instances" title="Permalink to this definition">¶</a></dt>
+<dd><p>class attribute pointing to all live
+BoundMethodWeakref objects indexed by the class&#8217;s
+<cite>calculate_key(target)</cite> method applied to the target
+objects. This weak value dictionary is used to
+short-circuit creation so that multiple references
+to the same (object, function) pair produce the
+same BoundMethodWeakref instance.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="thriftpool.utils.dispatch.saferef.BoundMethodWeakref.calculate_key">
+<em class="property">classmethod </em><tt class="descname">calculate_key</tt><big>(</big><em>target</em><big>)</big><a class="headerlink" href="#thriftpool.utils.dispatch.saferef.BoundMethodWeakref.calculate_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the reference key for this reference</p>
+<p>Currently this is a two-tuple of the <cite>id()</cite>&#8216;s of the
+target object and the target function respectively.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.utils.dispatch.saferef.BoundNonDescriptorMethodWeakref">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.dispatch.saferef.</tt><tt class="descname">BoundNonDescriptorMethodWeakref</tt><big>(</big><em>target</em>, <em>on_delete=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.dispatch.saferef.BoundNonDescriptorMethodWeakref" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.utils.dispatch.saferef.BoundMethodWeakref" title="thriftpool.utils.dispatch.saferef.BoundMethodWeakref"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.dispatch.saferef.BoundMethodWeakref</span></tt></a></p>
+<p>A specialized <a class="reference internal" href="#thriftpool.utils.dispatch.saferef.BoundMethodWeakref" title="thriftpool.utils.dispatch.saferef.BoundMethodWeakref"><tt class="xref py py-class docutils literal"><span class="pre">BoundMethodWeakref</span></tt></a>, for platforms where
+instance methods are not descriptors.</p>
+<p>It assumes that the function name and the target attribute name are the
+same, instead of assuming that the function is a descriptor. This approach
+is equally fast, but not 100% reliable because functions can be stored on
+an attribute named differenty than the function&#8217;s name such as in:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="s">&quot;foo&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">bar</span> <span class="o">=</span> <span class="n">foo</span>
+</pre></div>
+</div>
+<p>But this shouldn&#8217;t be a common use case. So, on platforms where methods
+aren&#8217;t descriptors (such as Jython) this implementation has the advantage
+of working in the most cases.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.dispatch.saferef.get_bound_method_weakref">
+<tt class="descclassname">thriftpool.utils.dispatch.saferef.</tt><tt class="descname">get_bound_method_weakref</tt><big>(</big><em>target</em>, <em>on_delete</em><big>)</big><a class="headerlink" href="#thriftpool.utils.dispatch.saferef.get_bound_method_weakref" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates the appropiate <tt class="xref py py-class docutils literal"><span class="pre">BoundMethodWeakRef</span></tt>, depending
+on the details of the underlying class method implementation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.dispatch.saferef.safe_ref">
+<tt class="descclassname">thriftpool.utils.dispatch.saferef.</tt><tt class="descname">safe_ref</tt><big>(</big><em>target</em>, <em>on_delete=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.dispatch.saferef.safe_ref" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a <em>safe</em> weak reference to a callable target</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; the object to be weakly referenced, if it&#8217;s a
+bound method reference, will create a <a class="reference internal" href="#thriftpool.utils.dispatch.saferef.BoundMethodWeakref" title="thriftpool.utils.dispatch.saferef.BoundMethodWeakref"><tt class="xref py py-class docutils literal"><span class="pre">BoundMethodWeakref</span></tt></a>,
+otherwise creates a simple <tt class="xref py py-class docutils literal"><span class="pre">weakref.ref</span></tt>.</li>
+<li><strong>on_delete</strong> &#8211; if provided, will have a hard reference stored
+to the callable to be called after the safe reference
+goes out of scope with the reference object, (either a
+<tt class="xref py py-class docutils literal"><span class="pre">weakref.ref</span></tt> or a <a class="reference internal" href="#thriftpool.utils.dispatch.saferef.BoundMethodWeakref" title="thriftpool.utils.dispatch.saferef.BoundMethodWeakref"><tt class="xref py py-class docutils literal"><span class="pre">BoundMethodWeakref</span></tt></a>) as argument.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.utils.dispatch.signal">
+<span id="signal-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">signal</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.dispatch.signal" title="Permalink to this headline">¶</a></h2>
+<p>Signal class.</p>
+<dl class="class">
+<dt id="thriftpool.utils.dispatch.signal.Signal">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.dispatch.signal.</tt><tt class="descname">Signal</tt><big>(</big><em>providing_args=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.dispatch.signal.Signal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Base class for all signals</p>
+<dl class="attribute">
+<dt id="thriftpool.utils.dispatch.signal.Signal.receivers">
+<tt class="descname">receivers</tt><a class="headerlink" href="#thriftpool.utils.dispatch.signal.Signal.receivers" title="Permalink to this definition">¶</a></dt>
+<dt>
+<tt class="descname">Internal attribute, holds a dictionary of</tt></dt>
+<dt>
+<tt class="descname">`{receriverkey (id): weakref(receiver)}` mappings.</tt></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.dispatch.signal.Signal.connect">
+<tt class="descname">connect</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.utils.dispatch.signal.Signal.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect receiver to sender for signal.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>receiver</strong> &#8211; <p>A function or an instance method which is to
+receive signals. Receivers must be hashable objects.</p>
+<p>if weak is <tt class="xref py py-const docutils literal"><span class="pre">True</span></tt>, then receiver must be weak-referencable
+(more precisely <tt class="xref py py-func docutils literal"><span class="pre">saferef.safe_ref()</span></tt> must be able to create a
+reference to the receiver).</p>
+<p>Receivers must be able to accept keyword arguments.</p>
+<p>If receivers have a <cite>dispatch_uid</cite> attribute, the receiver will
+not be added if another receiver already exists with that
+<cite>dispatch_uid</cite>.</p>
+</li>
+<li><strong>sender</strong> &#8211; The sender to which the receiver should respond.
+Must either be of type <a class="reference internal" href="#thriftpool.utils.dispatch.signal.Signal" title="thriftpool.utils.dispatch.signal.Signal"><tt class="xref py py-class docutils literal"><span class="pre">Signal</span></tt></a>, or <tt class="xref py py-const docutils literal"><span class="pre">None</span></tt> to receive
+events from any sender.</li>
+<li><strong>weak</strong> &#8211; Whether to use weak references to the receiver.
+By default, the module will attempt to use weak references to the
+receiver objects. If this parameter is false, then strong
+references will be used.</li>
+<li><strong>dispatch_uid</strong> &#8211; An identifier used to uniquely identify a
+particular instance of a receiver. This will usually be a
+string, though it may be anything hashable.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.dispatch.signal.Signal.disconnect">
+<tt class="descname">disconnect</tt><big>(</big><em>receiver=None</em>, <em>sender=None</em>, <em>weak=True</em>, <em>dispatch_uid=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.dispatch.signal.Signal.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disconnect receiver from sender for signal.</p>
+<p>If weak references are used, disconnect need not be called. The
+receiver will be removed from dispatch automatically.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>receiver</strong> &#8211; The registered receiver to disconnect. May be
+none if <cite>dispatch_uid</cite> is specified.</li>
+<li><strong>sender</strong> &#8211; The registered sender to disconnect.</li>
+<li><strong>weak</strong> &#8211; The weakref state to disconnect.</li>
+<li><strong>dispatch_uid</strong> &#8211; the unique identifier of the receiver
+to disconnect</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.dispatch.signal.Signal.send">
+<tt class="descname">send</tt><big>(</big><em>sender</em>, <em>**named</em><big>)</big><a class="headerlink" href="#thriftpool.utils.dispatch.signal.Signal.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send signal from sender to all connected receivers.</p>
+<p>If any receiver raises an error, the error propagates back through
+send, terminating the dispatch loop, so it is quite possible to not
+have all receivers called if a raises an error.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sender</strong> &#8211; The sender of the signal. Either a specific
+object or <tt class="xref py py-const docutils literal"><span class="pre">None</span></tt>.</li>
+<li><strong>**named</strong> &#8211; Named arguments which will be passed to receivers.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of tuple pairs: <cite>[(receiver, response), ... ]</cite>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.dispatch.signal.Signal.send_robust">
+<tt class="descname">send_robust</tt><big>(</big><em>sender</em>, <em>**named</em><big>)</big><a class="headerlink" href="#thriftpool.utils.dispatch.signal.Signal.send_robust" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send signal from sender to all connected receivers catching errors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sender</strong> &#8211; The sender of the signal. Can be any python object
+(normally one registered with a connect if you actually want
+something to occur).</li>
+<li><strong>**named</strong> &#8211; Named arguments which will be passed to receivers.
+These arguments must be a subset of the argument names defined in
+<tt class="xref py py-attr docutils literal"><span class="pre">providing_args</span></tt>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">a list of tuple pairs: <cite>[(receiver, response), ... ]</cite>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Raises DispatcherKeyError:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>if any receiver raises an error (specifically any subclass of
+<tt class="xref py py-exc docutils literal"><span class="pre">Exception</span></tt>), the error instance is returned as the result
+for that receiver.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">dispatch Package</a><ul>
+<li><a class="reference internal" href="#id1"><tt class="docutils literal"><span class="pre">dispatch</span></tt> Package</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.dispatch.saferef"><tt class="docutils literal"><span class="pre">saferef</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.dispatch.signal"><tt class="docutils literal"><span class="pre">signal</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="thriftpool.utils.html"
+                        title="previous chapter">utils Package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/thriftpool.utils.dispatch.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thriftpool.utils.html" title="utils Package"
+             >previous</a> |</li>
+        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api.html" >API Documentation</a> &raquo;</li>
+          <li><a href="thriftpool.utils.html" >utils Package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Lipin Dmitriy.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
