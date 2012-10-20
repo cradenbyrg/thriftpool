@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>remote Package &mdash; thriftpool 0.0.1 documentation</title>
+    <title>remote Package &mdash; thriftpool 0.1.8 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.1',
+        VERSION:     '0.1.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="thriftpool 0.0.1 documentation" href="../index.html" />
+    <link rel="top" title="thriftpool 0.1.8 documentation" href="../index.html" />
     <link rel="up" title="API Documentation" href="../api.html" />
     <link rel="next" title="utils Package" href="thriftpool.utils.html" />
     <link rel="prev" title="controllers Package" href="thriftpool.controllers.html" /> 
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="thriftpool.controllers.html" title="controllers Package"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+        <li><a href="../index.html">thriftpool 0.1.8 documentation</a> &raquo;</li>
           <li><a href="../api.html" accesskey="U">API Documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -68,13 +68,30 @@
 <em class="property">class </em><tt class="descclassname">thriftpool.remote.ThriftPool.</tt><tt class="descname">Client</tt><big>(</big><em>iprot</em>, <em>oprot=None</em><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Client" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#thriftpool.remote.ThriftPool.Iface" title="thriftpool.remote.ThriftPool.Iface"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.remote.ThriftPool.Iface</span></tt></a></p>
 <dl class="method">
+<dt id="thriftpool.remote.ThriftPool.Client.echoString">
+<tt class="descname">echoString</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Client.echoString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parameters:
+- s</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="thriftpool.remote.ThriftPool.Client.ping">
 <tt class="descname">ping</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Client.ping" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="thriftpool.remote.ThriftPool.Client.recv_echoString">
+<tt class="descname">recv_echoString</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Client.recv_echoString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="thriftpool.remote.ThriftPool.Client.recv_ping">
 <tt class="descname">recv_ping</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Client.recv_ping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.remote.ThriftPool.Client.send_echoString">
+<tt class="descname">send_echoString</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Client.send_echoString" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -88,6 +105,13 @@
 <dt id="thriftpool.remote.ThriftPool.Iface">
 <em class="property">class </em><tt class="descclassname">thriftpool.remote.ThriftPool.</tt><tt class="descname">Iface</tt><a class="headerlink" href="#thriftpool.remote.ThriftPool.Iface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="thriftpool.remote.ThriftPool.Iface.echoString">
+<tt class="descname">echoString</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Iface.echoString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parameters:
+- s</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="thriftpool.remote.ThriftPool.Iface.ping">
 <tt class="descname">ping</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Iface.ping" title="Permalink to this definition">¶</a></dt>
@@ -105,8 +129,59 @@
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="thriftpool.remote.ThriftPool.Processor.process_echoString">
+<tt class="descname">process_echoString</tt><big>(</big><em>seqid</em>, <em>iprot</em>, <em>oprot</em><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Processor.process_echoString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="thriftpool.remote.ThriftPool.Processor.process_ping">
 <tt class="descname">process_ping</tt><big>(</big><em>seqid</em>, <em>iprot</em>, <em>oprot</em><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.Processor.process_ping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.remote.ThriftPool.echoString_args">
+<em class="property">class </em><tt class="descclassname">thriftpool.remote.ThriftPool.</tt><tt class="descname">echoString_args</tt><big>(</big><em>s=None</em><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.echoString_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">thrift.protocol.TBase.TBase</span></tt></p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd><ul class="first last simple">
+<li>s</li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="thriftpool.remote.ThriftPool.echoString_args.s">
+<tt class="descname">s</tt><a class="headerlink" href="#thriftpool.remote.ThriftPool.echoString_args.s" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.remote.ThriftPool.echoString_args.thrift_spec">
+<tt class="descname">thrift_spec</tt><em class="property"> = (None, (1, 11, 's', None, None))</em><a class="headerlink" href="#thriftpool.remote.ThriftPool.echoString_args.thrift_spec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.remote.ThriftPool.echoString_result">
+<em class="property">class </em><tt class="descclassname">thriftpool.remote.ThriftPool.</tt><tt class="descname">echoString_result</tt><big>(</big><em>success=None</em><big>)</big><a class="headerlink" href="#thriftpool.remote.ThriftPool.echoString_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">thrift.protocol.TBase.TBase</span></tt></p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd><ul class="first last simple">
+<li>success</li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="thriftpool.remote.ThriftPool.echoString_result.success">
+<tt class="descname">success</tt><a class="headerlink" href="#thriftpool.remote.ThriftPool.echoString_result.success" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.remote.ThriftPool.echoString_result.thrift_spec">
+<tt class="descname">thrift_spec</tt><em class="property"> = ((0, 11, 'success', None, None),)</em><a class="headerlink" href="#thriftpool.remote.ThriftPool.echoString_result.thrift_spec" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -142,10 +217,36 @@
 <dl class="class">
 <dt id="thriftpool.remote.handler.Handler">
 <em class="property">class </em><tt class="descclassname">thriftpool.remote.handler.</tt><tt class="descname">Handler</tt><a class="headerlink" href="#thriftpool.remote.handler.Handler" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#thriftpool.remote.ThriftPool.Iface" title="thriftpool.remote.ThriftPool.Iface"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.remote.ThriftPool.Iface</span></tt></a></p>
+<dd><p>Bases: <a class="reference internal" href="thriftpool.html#thriftpool.base.BaseHandler" title="thriftpool.base.BaseHandler"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.base.BaseHandler</span></tt></a>, <a class="reference internal" href="#thriftpool.remote.ThriftPool.Iface" title="thriftpool.remote.ThriftPool.Iface"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.remote.ThriftPool.Iface</span></tt></a></p>
+<dl class="method">
+<dt id="thriftpool.remote.handler.Handler.echoString">
+<tt class="descname">echoString</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#thriftpool.remote.handler.Handler.echoString" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.remote.handler.Handler.meta">
+<tt class="descname">meta</tt><em class="property"> = {'abstract': False, 'name': 'ThriftPool', 'processor': &lt;class 'thriftpool.remote.ThriftPool.Processor'&gt;}</em><a class="headerlink" href="#thriftpool.remote.handler.Handler.meta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.remote.handler.Handler.options">
+<em class="property">class </em><tt class="descname">options</tt><a class="headerlink" href="#thriftpool.remote.handler.Handler.options" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="thriftpool.remote.handler.Handler.options.name">
+<tt class="descname">name</tt><em class="property"> = 'ThriftPool'</em><a class="headerlink" href="#thriftpool.remote.handler.Handler.options.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.remote.handler.Handler.options.processor">
+<tt class="descname">processor</tt><a class="headerlink" href="#thriftpool.remote.handler.Handler.options.processor" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Processor</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="method">
 <dt id="thriftpool.remote.handler.Handler.ping">
-<tt class="descname">ping</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.remote.handler.Handler.ping" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">Handler.</tt><tt class="descname">ping</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.remote.handler.Handler.ping" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -217,7 +318,7 @@
         <li class="right" >
           <a href="thriftpool.controllers.html" title="controllers Package"
              >previous</a> |</li>
-        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+        <li><a href="../index.html">thriftpool 0.1.8 documentation</a> &raquo;</li>
           <li><a href="../api.html" >API Documentation</a> &raquo;</li> 
       </ul>
     </div>

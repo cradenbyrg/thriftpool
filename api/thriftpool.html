@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>thriftpool Package &mdash; thriftpool 0.0.1 documentation</title>
+    <title>thriftpool Package &mdash; thriftpool 0.1.8 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.1',
+        VERSION:     '0.1.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="thriftpool 0.0.1 documentation" href="../index.html" /> 
+    <link rel="top" title="thriftpool 0.1.8 documentation" href="../index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -37,7 +37,7 @@
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li> 
+        <li><a href="../index.html">thriftpool 0.1.8 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -51,6 +51,55 @@
 <div class="section" id="id1">
 <h2><tt class="xref py py-mod docutils literal"><span class="pre">thriftpool</span></tt> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-thriftpool.__init__"></span><p>Container for thrift services.</p>
+<dl class="class">
+<dt id="thriftpool.__init__.BaseHandler">
+<em class="property">class </em><tt class="descclassname">thriftpool.__init__.</tt><tt class="descname">BaseHandler</tt><a class="headerlink" href="#thriftpool.__init__.BaseHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Base class for handler.</p>
+<dl class="attribute">
+<dt id="thriftpool.__init__.BaseHandler.meta">
+<tt class="descname">meta</tt><em class="property"> = {'abstract': True}</em><a class="headerlink" href="#thriftpool.__init__.BaseHandler.meta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.__init__.BaseHandler.options">
+<em class="property">class </em><tt class="descname">options</tt><a class="headerlink" href="#thriftpool.__init__.BaseHandler.options" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="thriftpool.__init__.BaseHandler.options.abstract">
+<tt class="descname">abstract</tt><em class="property"> = True</em><a class="headerlink" href="#thriftpool.__init__.BaseHandler.options.abstract" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.base">
+<span id="base-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">base</span></tt> Module<a class="headerlink" href="#module-thriftpool.base" title="Permalink to this headline">¶</a></h2>
+<p>Implement base class for handlers. This can be used to simply inherit from
+this class instead of directly registering new handler.</p>
+<dl class="class">
+<dt id="thriftpool.base.BaseHandler">
+<em class="property">class </em><tt class="descclassname">thriftpool.base.</tt><tt class="descname">BaseHandler</tt><a class="headerlink" href="#thriftpool.base.BaseHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Base class for handler.</p>
+<dl class="attribute">
+<dt id="thriftpool.base.BaseHandler.meta">
+<tt class="descname">meta</tt><em class="property"> = {'abstract': True}</em><a class="headerlink" href="#thriftpool.base.BaseHandler.meta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.base.BaseHandler.options">
+<em class="property">class </em><tt class="descname">options</tt><a class="headerlink" href="#thriftpool.base.BaseHandler.options" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="thriftpool.base.BaseHandler.options.abstract">
+<tt class="descname">abstract</tt><em class="property"> = True</em><a class="headerlink" href="#thriftpool.base.BaseHandler.options.abstract" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="module-thriftpool.exceptions">
 <span id="exceptions-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">exceptions</span></tt> Module<a class="headerlink" href="#module-thriftpool.exceptions" title="Permalink to this headline">¶</a></h2>
@@ -61,33 +110,47 @@
 <p>Throw to terminate program.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-thriftpool.handlers">
-<span id="handlers-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">handlers</span></tt> Module<a class="headerlink" href="#module-thriftpool.handlers" title="Permalink to this headline">¶</a></h2>
-<p>Provide some tools to patch thrift handler.</p>
-<dl class="class">
-<dt id="thriftpool.handlers.HandlerMeta">
-<em class="property">class </em><tt class="descclassname">thriftpool.handlers.</tt><tt class="descname">HandlerMeta</tt><a class="headerlink" href="#thriftpool.handlers.HandlerMeta" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">type</span></tt></p>
-<p>Metaclass that create handler with decorated methods.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="thriftpool.handlers.ProcessorMixin">
-<em class="property">class </em><tt class="descclassname">thriftpool.handlers.</tt><tt class="descname">ProcessorMixin</tt><a class="headerlink" href="#thriftpool.handlers.ProcessorMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
-<p>Process application error if there is one.</p>
-<dl class="method">
-<dt id="thriftpool.handlers.ProcessorMixin.process">
-<tt class="descname">process</tt><big>(</big><em>iprot</em>, <em>oprot</em><big>)</big><a class="headerlink" href="#thriftpool.handlers.ProcessorMixin.process" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<dl class="exception">
+<dt id="thriftpool.exceptions.RegistrationError">
+<em class="property">exception </em><tt class="descclassname">thriftpool.exceptions.</tt><tt class="descname">RegistrationError</tt><a class="headerlink" href="#thriftpool.exceptions.RegistrationError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+<p>Error happened on handler registration.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="module-thriftpool.signals">
 <span id="signals-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">signals</span></tt> Module<a class="headerlink" href="#module-thriftpool.signals" title="Permalink to this headline">¶</a></h2>
 <p>Specify signals sent when specific events happens.</p>
+<dl class="data">
+<dt id="thriftpool.signals.after_app_start">
+<tt class="descclassname">thriftpool.signals.</tt><tt class="descname">after_app_start</tt><em class="property"> = &lt;Signal: Signal&gt;</em><a class="headerlink" href="#thriftpool.signals.after_app_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called after application start.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="thriftpool.signals.after_logging_setup">
+<tt class="descclassname">thriftpool.signals.</tt><tt class="descname">after_logging_setup</tt><em class="property"> = &lt;Signal: Signal&gt;</em><a class="headerlink" href="#thriftpool.signals.after_logging_setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called after loggers are configured.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="thriftpool.signals.app_shutdown">
+<tt class="descclassname">thriftpool.signals.</tt><tt class="descname">app_shutdown</tt><em class="property"> = &lt;Signal: Signal&gt;</em><a class="headerlink" href="#thriftpool.signals.app_shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called after application stopped.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="thriftpool.signals.app_start">
+<tt class="descclassname">thriftpool.signals.</tt><tt class="descname">app_start</tt><em class="property"> = &lt;Signal: Signal&gt;</em><a class="headerlink" href="#thriftpool.signals.app_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called on application start.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="thriftpool.signals.collect_excluded_fds">
+<tt class="descclassname">thriftpool.signals.</tt><tt class="descname">collect_excluded_fds</tt><em class="property"> = &lt;Signal: Signal&gt;</em><a class="headerlink" href="#thriftpool.signals.collect_excluded_fds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect file descriptors that must not be closed.</p>
+</dd></dl>
+
 <dl class="data">
 <dt id="thriftpool.signals.handler_method_guarded">
 <tt class="descclassname">thriftpool.signals.</tt><tt class="descname">handler_method_guarded</tt><em class="property"> = &lt;Signal: Signal&gt;</em><a class="headerlink" href="#thriftpool.signals.handler_method_guarded" title="Permalink to this definition">¶</a></dt>
@@ -106,21 +169,30 @@
 <dd><p>Listener was stopped.</p>
 </dd></dl>
 
+<dl class="data">
+<dt id="thriftpool.signals.setup_logging">
+<tt class="descclassname">thriftpool.signals.</tt><tt class="descname">setup_logging</tt><em class="property"> = &lt;Signal: Signal&gt;</em><a class="headerlink" href="#thriftpool.signals.setup_logging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called before loggers are configured.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="subpackages">
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="thriftpool.app.html">app Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.app.html#module-thriftpool.app._state"><tt class="docutils literal"><span class="pre">_state</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.app.html#module-thriftpool.app.base"><tt class="docutils literal"><span class="pre">base</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.app.html#module-thriftpool.app.config"><tt class="docutils literal"><span class="pre">config</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.app.html#module-thriftpool.app.loader"><tt class="docutils literal"><span class="pre">loader</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.app.html#module-thriftpool.app.log"><tt class="docutils literal"><span class="pre">log</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.app.html#module-thriftpool.app.slots"><tt class="docutils literal"><span class="pre">slots</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.app.html#module-thriftpool.app.worker"><tt class="docutils literal"><span class="pre">worker</span></tt> Module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="thriftpool.bin.html">bin Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="thriftpool.bin.html#module-thriftpool.bin.thriftpool"><tt class="docutils literal"><span class="pre">thriftpool</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.bin.html#module-thriftpool.bin.base"><tt class="docutils literal"><span class="pre">base</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.bin.html#module-thriftpool.bin.thriftpoolctl"><tt class="docutils literal"><span class="pre">thriftpoolctl</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.bin.html#module-thriftpool.bin.thriftpoold"><tt class="docutils literal"><span class="pre">thriftpoold</span></tt> Module</a></li>
 </ul>
 </li>
@@ -144,21 +216,35 @@
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.remote.html#module-thriftpool.remote.ttypes"><tt class="docutils literal"><span class="pre">ttypes</span></tt> Module</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="thriftpool.request.html">request Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.request.html#id1"><tt class="docutils literal"><span class="pre">request</span></tt> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.request.html#module-thriftpool.request.handler"><tt class="docutils literal"><span class="pre">handler</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.request.html#module-thriftpool.request.processor"><tt class="docutils literal"><span class="pre">processor</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.request.html#module-thriftpool.request.stack"><tt class="docutils literal"><span class="pre">stack</span></tt> Module</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="thriftpool.utils.html">utils Package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.debug"><tt class="docutils literal"><span class="pre">debug</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.encoding"><tt class="docutils literal"><span class="pre">encoding</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.finalize"><tt class="docutils literal"><span class="pre">finalize</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.functional"><tt class="docutils literal"><span class="pre">functional</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.imports"><tt class="docutils literal"><span class="pre">imports</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.local"><tt class="docutils literal"><span class="pre">local</span></tt> Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="thriftpool.utils.html#thriftpool-utils-local">thriftpool.utils.local</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.logs"><tt class="docutils literal"><span class="pre">logs</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.mixin"><tt class="docutils literal"><span class="pre">mixin</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.other"><tt class="docutils literal"><span class="pre">other</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.platforms"><tt class="docutils literal"><span class="pre">platforms</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.proxy"><tt class="docutils literal"><span class="pre">proxy</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.signals"><tt class="docutils literal"><span class="pre">signals</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.structures"><tt class="docutils literal"><span class="pre">structures</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.term"><tt class="docutils literal"><span class="pre">term</span></tt> Module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="thriftpool.utils.html#celery-utils-term">celery.utils.term</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.text"><tt class="docutils literal"><span class="pre">text</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#module-thriftpool.utils.threads"><tt class="docutils literal"><span class="pre">threads</span></tt> Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thriftpool.utils.html#subpackages">Subpackages</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="thriftpool.utils.dispatch.html">dispatch Package</a><ul>
@@ -186,8 +272,8 @@
   <ul>
 <li><a class="reference internal" href="#">thriftpool Package</a><ul>
 <li><a class="reference internal" href="#id1"><tt class="docutils literal"><span class="pre">thriftpool</span></tt> Package</a></li>
+<li><a class="reference internal" href="#module-thriftpool.base"><tt class="docutils literal"><span class="pre">base</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-thriftpool.exceptions"><tt class="docutils literal"><span class="pre">exceptions</span></tt> Module</a></li>
-<li><a class="reference internal" href="#module-thriftpool.handlers"><tt class="docutils literal"><span class="pre">handlers</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-thriftpool.signals"><tt class="docutils literal"><span class="pre">signals</span></tt> Module</a></li>
 <li><a class="reference internal" href="#subpackages">Subpackages</a><ul>
 </ul>
@@ -227,7 +313,7 @@
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li> 
+        <li><a href="../index.html">thriftpool 0.1.8 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

@@ -1,0 +1,195 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>request Package &mdash; thriftpool 0.1.8 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="thriftpool 0.1.8 documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">thriftpool 0.1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="request-package">
+<h1>request Package<a class="headerlink" href="#request-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><tt class="xref py py-mod docutils literal"><span class="pre">request</span></tt> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-thriftpool.request"></span></div>
+<div class="section" id="module-thriftpool.request.handler">
+<span id="handler-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">handler</span></tt> Module<a class="headerlink" href="#module-thriftpool.request.handler" title="Permalink to this headline">¶</a></h2>
+<p>Provide some tools to patch thrift handler.</p>
+<dl class="class">
+<dt id="thriftpool.request.handler.BaseWrappedHandler">
+<em class="property">class </em><tt class="descclassname">thriftpool.request.handler.</tt><tt class="descname">BaseWrappedHandler</tt><big>(</big><em>handler</em><big>)</big><a class="headerlink" href="#thriftpool.request.handler.BaseWrappedHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Abstract base for wrapped handler.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.request.handler.WrappedHandlerMeta">
+<em class="property">class </em><tt class="descclassname">thriftpool.request.handler.</tt><tt class="descname">WrappedHandlerMeta</tt><a class="headerlink" href="#thriftpool.request.handler.WrappedHandlerMeta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">type</span></tt></p>
+<p>Metaclass that create handler with decorated methods.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.request.handler.guarded_method">
+<tt class="descclassname">thriftpool.request.handler.</tt><tt class="descname">guarded_method</tt><a class="headerlink" href="#thriftpool.request.handler.guarded_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create guarded method for handler.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.request.processor">
+<span id="processor-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">processor</span></tt> Module<a class="headerlink" href="#module-thriftpool.request.processor" title="Permalink to this headline">¶</a></h2>
+<p>Contains patched processor.</p>
+<dl class="class">
+<dt id="thriftpool.request.processor.ProcessorMixin">
+<em class="property">class </em><tt class="descclassname">thriftpool.request.processor.</tt><tt class="descname">ProcessorMixin</tt><a class="headerlink" href="#thriftpool.request.processor.ProcessorMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Process application error if there is one.</p>
+<dl class="method">
+<dt id="thriftpool.request.processor.ProcessorMixin.process">
+<tt class="descname">process</tt><big>(</big><em>iprot</em>, <em>oprot</em><big>)</big><a class="headerlink" href="#thriftpool.request.processor.ProcessorMixin.process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.request.stack">
+<span id="stack-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">stack</span></tt> Module<a class="headerlink" href="#module-thriftpool.request.stack" title="Permalink to this headline">¶</a></h2>
+<p>Contains patched processor.</p>
+<dl class="class">
+<dt id="thriftpool.request.stack.Request">
+<em class="property">class </em><tt class="descclassname">thriftpool.request.stack.</tt><tt class="descname">Request</tt><a class="headerlink" href="#thriftpool.request.stack.Request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.request.stack.Request" title="thriftpool.request.stack.Request"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.request.stack.Request</span></tt></a></p>
+<p>Describe thrift request.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.request.stack.RequestStack">
+<em class="property">class </em><tt class="descclassname">thriftpool.request.stack.</tt><tt class="descname">RequestStack</tt><a class="headerlink" href="#thriftpool.request.stack.RequestStack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Store thrift requests.</p>
+<dl class="class">
+<dt id="thriftpool.request.stack.RequestStack.Request">
+<em class="property">class </em><tt class="descname">Request</tt><a class="headerlink" href="#thriftpool.request.stack.RequestStack.Request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.request.stack.Request" title="thriftpool.request.stack.Request"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.request.stack.Request</span></tt></a></p>
+<p>Describe thrift request.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.request.stack.RequestStack.add">
+<tt class="descclassname">RequestStack.</tt><tt class="descname">add</tt><big>(</big><em>handler</em>, <em>method</em>, <em>args</em>, <em>kwargs</em>, <em>service_name</em><big>)</big><a class="headerlink" href="#thriftpool.request.stack.RequestStack.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register new request.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.request.stack.RequestStack.current">
+<tt class="descclassname">RequestStack.</tt><tt class="descname">current</tt><a class="headerlink" href="#thriftpool.request.stack.RequestStack.current" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return current request.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="thriftpool.request.stack.current_request">
+<tt class="descclassname">thriftpool.request.stack.</tt><tt class="descname">current_request</tt><em class="property"> = None</em><a class="headerlink" href="#thriftpool.request.stack.current_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get current thrift request.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">request Package</a><ul>
+<li><a class="reference internal" href="#id1"><tt class="docutils literal"><span class="pre">request</span></tt> Package</a></li>
+<li><a class="reference internal" href="#module-thriftpool.request.handler"><tt class="docutils literal"><span class="pre">handler</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.request.processor"><tt class="docutils literal"><span class="pre">processor</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.request.stack"><tt class="docutils literal"><span class="pre">stack</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/thriftpool.request.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">thriftpool 0.1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Lipin Dmitriy.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

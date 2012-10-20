@@ -41,6 +41,14 @@ utils Package
     :undoc-members:
     :show-inheritance:
 
+:mod:`local` Module
+-------------------
+
+.. automodule:: thriftpool.utils.local
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 :mod:`logs` Module
 ------------------
 
@@ -65,6 +73,22 @@ utils Package
     :undoc-members:
     :show-inheritance:
 
+:mod:`platforms` Module
+-----------------------
+
+.. automodule:: thriftpool.utils.platforms
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`proxy` Module
+-------------------
+
+.. automodule:: thriftpool.utils.proxy
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 :mod:`signals` Module
 ---------------------
 
@@ -85,6 +109,14 @@ utils Package
 ------------------
 
 .. automodule:: thriftpool.utils.term
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`text` Module
+------------------
+
+.. automodule:: thriftpool.utils.text
     :members:
     :undoc-members:
     :show-inheritance:

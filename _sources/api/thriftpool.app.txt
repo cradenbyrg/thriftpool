@@ -1,6 +1,14 @@
 app Package
 ===========
 
+:mod:`_state` Module
+--------------------
+
+.. automodule:: thriftpool.app._state
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 :mod:`base` Module
 ------------------
 
@@ -37,6 +45,14 @@ app Package
 -------------------
 
 .. automodule:: thriftpool.app.slots
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`worker` Module
+--------------------
+
+.. automodule:: thriftpool.app.worker
     :members:
     :undoc-members:
     :show-inheritance:

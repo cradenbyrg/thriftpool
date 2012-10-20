@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>utils Package &mdash; thriftpool 0.0.1 documentation</title>
+    <title>utils Package &mdash; thriftpool 0.1.8 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.1',
+        VERSION:     '0.1.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="thriftpool 0.0.1 documentation" href="../index.html" />
+    <link rel="top" title="thriftpool 0.1.8 documentation" href="../index.html" />
     <link rel="up" title="API Documentation" href="../api.html" />
     <link rel="next" title="dispatch Package" href="thriftpool.utils.dispatch.html" />
     <link rel="prev" title="remote Package" href="thriftpool.remote.html" /> 
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="thriftpool.remote.html" title="remote Package"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+        <li><a href="../index.html">thriftpool 0.1.8 documentation</a> &raquo;</li>
           <li><a href="../api.html" accesskey="U">API Documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -209,11 +209,13 @@ of the get function.</p>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-python"><pre>celery.concurrency.processes.TaskPool
-                            ^- class name</pre>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">celery</span><span class="o">.</span><span class="n">concurrency</span><span class="o">.</span><span class="n">processes</span><span class="o">.</span><span class="n">TaskPool</span>
+                            <span class="o">^-</span> <span class="k">class</span> <span class="nc">name</span>
+</pre></div>
 </div>
 <p>or using &#8216;:&#8217; to separate module and symbol:</p>
-<div class="highlight-python"><pre>celery.concurrency.processes:TaskPool</pre>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">celery</span><span class="o">.</span><span class="n">concurrency</span><span class="o">.</span><span class="n">processes</span><span class="p">:</span><span class="n">TaskPool</span>
+</pre></div>
 </div>
 <p>If <cite>aliases</cite> is provided, a dict containing short name/long name
 mappings, the name is looked up in the aliases first.</p>
@@ -247,6 +249,135 @@ True</p>
 <tt class="descclassname">thriftpool.utils.imports.</tt><tt class="descname">qualname</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#thriftpool.utils.imports.qualname" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+</div>
+<div class="section" id="module-thriftpool.utils.local">
+<span id="local-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">local</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.local" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="thriftpool-utils-local">
+<h3>thriftpool.utils.local<a class="headerlink" href="#thriftpool-utils-local" title="Permalink to this headline">¶</a></h3>
+<p>This module implements context-local objects.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body"><ol class="first loweralpha simple" start="3">
+<li>2011 by the Werkzeug Team, see AUTHORS for more details.</li>
+</ol>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body"><p class="first last">BSD, see LICENSE for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="thriftpool.utils.local.Local">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.local.</tt><tt class="descname">Local</tt><a class="headerlink" href="#thriftpool.utils.local.Local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.utils.local.LocalProxy">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.local.</tt><tt class="descname">LocalProxy</tt><big>(</big><em>local</em>, <em>name=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.local.LocalProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Acts as a proxy for a werkzeug local.  Forwards all operations to
+a proxied object.  The only operations not supported for forwarding
+are right handed operands and any kind of assignment.</p>
+<p>Example usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">thriftpool.utils.local</span> <span class="kn">import</span> <span class="n">Local</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">Local</span><span class="p">()</span>
+
+<span class="c"># these are proxies</span>
+<span class="n">request</span> <span class="o">=</span> <span class="n">l</span><span class="p">(</span><span class="s">&#39;request&#39;</span><span class="p">)</span>
+<span class="n">user</span> <span class="o">=</span> <span class="n">l</span><span class="p">(</span><span class="s">&#39;user&#39;</span><span class="p">)</span>
+
+
+<span class="kn">from</span> <span class="nn">thriftpool.utils.local</span> <span class="kn">import</span> <span class="n">LocalStack</span>
+<span class="n">_response_local</span> <span class="o">=</span> <span class="n">LocalStack</span><span class="p">()</span>
+
+<span class="c"># this is a proxy</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">_response_local</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Whenever something is bound to l.user / l.request the proxy objects
+will forward all operations.  If no object is bound a <tt class="xref py py-exc docutils literal"><span class="pre">RuntimeError</span></tt>
+will be raised.</p>
+<p>To create proxies to <a class="reference internal" href="#thriftpool.utils.local.Local" title="thriftpool.utils.local.Local"><tt class="xref py py-class docutils literal"><span class="pre">Local</span></tt></a> or <a class="reference internal" href="#thriftpool.utils.local.LocalStack" title="thriftpool.utils.local.LocalStack"><tt class="xref py py-class docutils literal"><span class="pre">LocalStack</span></tt></a> objects,
+call the object as shown above.  If you want to have a proxy to an
+object looked up by a function, you can (as of Werkzeug 0.6.1) pass
+a function to the <a class="reference internal" href="#thriftpool.utils.local.LocalProxy" title="thriftpool.utils.local.LocalProxy"><tt class="xref py py-class docutils literal"><span class="pre">LocalProxy</span></tt></a> constructor:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">session</span> <span class="o">=</span> <span class="n">LocalProxy</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">get_current_request</span><span class="p">()</span><span class="o">.</span><span class="n">session</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.utils.local.LocalStack">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.local.</tt><tt class="descname">LocalStack</tt><a class="headerlink" href="#thriftpool.utils.local.LocalStack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>This class works similar to a <a class="reference internal" href="#thriftpool.utils.local.Local" title="thriftpool.utils.local.Local"><tt class="xref py py-class docutils literal"><span class="pre">Local</span></tt></a> but keeps a stack
+of objects instead.  This is best explained with an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span> <span class="o">=</span> <span class="n">LocalStack</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span><span class="o">.</span><span class="n">top</span>
+<span class="go">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span><span class="o">.</span><span class="n">top</span>
+<span class="go">23</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="go">23</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ls</span><span class="o">.</span><span class="n">top</span>
+<span class="go">42</span>
+</pre></div>
+</div>
+<p>They can be force released by using a <tt class="xref py py-class docutils literal"><span class="pre">LocalManager</span></tt> or with
+the <a class="reference internal" href="#thriftpool.utils.local.release_local" title="thriftpool.utils.local.release_local"><tt class="xref py py-func docutils literal"><span class="pre">release_local()</span></tt></a> function but the correct way is to pop the
+item from the stack after using.  When the stack is empty it will
+no longer be bound to the current context (and as such released).</p>
+<p>By calling the stack without arguments it returns a proxy that resolves to
+the topmost item on the stack.</p>
+<dl class="method">
+<dt id="thriftpool.utils.local.LocalStack.pop">
+<tt class="descname">pop</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.local.LocalStack.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the topmost item from the stack, will return the
+old value or <cite>None</cite> if the stack was already empty.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.local.LocalStack.push">
+<tt class="descname">push</tt><big>(</big><em>obj</em><big>)</big><a class="headerlink" href="#thriftpool.utils.local.LocalStack.push" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pushes a new item to the stack</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.local.LocalStack.top">
+<tt class="descname">top</tt><a class="headerlink" href="#thriftpool.utils.local.LocalStack.top" title="Permalink to this definition">¶</a></dt>
+<dd><p>The topmost item on the stack.  If the stack is empty,
+<cite>None</cite> is returned.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.local.release_local">
+<tt class="descclassname">thriftpool.utils.local.</tt><tt class="descname">release_local</tt><big>(</big><em>local</em><big>)</big><a class="headerlink" href="#thriftpool.utils.local.release_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Releases the contents of the local for the current context.
+This makes it possible to use locals without a manager.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">Local</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">foo</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">release_local</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hasattr</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="s">&#39;foo&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>With this function one can release <a class="reference internal" href="#thriftpool.utils.local.Local" title="thriftpool.utils.local.Local"><tt class="xref py py-class docutils literal"><span class="pre">Local</span></tt></a> objects as well
+as <tt class="xref py py-class docutils literal"><span class="pre">StackLocal</span></tt> objects.  However it is not possible to
+release data held by proxies that way, one always has to retain
+a reference to the underlying local object in order to be able
+to release it.</p>
+</dd></dl>
+
+</div>
 </div>
 <div class="section" id="module-thriftpool.utils.logs">
 <span id="logs-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">logs</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.logs" title="Permalink to this headline">¶</a></h2>
@@ -379,6 +510,11 @@ This is equivalent to calling <a class="reference internal" href="#thriftpool.ut
 <p>Simple helper for logging.</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="thriftpool.utils.logs.mlevel">
+<tt class="descclassname">thriftpool.utils.logs.</tt><tt class="descname">mlevel</tt><big>(</big><em>level</em><big>)</big><a class="headerlink" href="#thriftpool.utils.logs.mlevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="module-thriftpool.utils.mixin">
 <span id="mixin-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">mixin</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.mixin" title="Permalink to this headline">¶</a></h2>
@@ -416,26 +552,176 @@ default is &#8216;app&#8217;.</li>
 <div class="section" id="module-thriftpool.utils.other">
 <span id="other-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">other</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.other" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="thriftpool.utils.other.mk_temp_path">
-<tt class="descclassname">thriftpool.utils.other.</tt><tt class="descname">mk_temp_path</tt><big>(</big><em>prefix=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.other.mk_temp_path" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="thriftpool.utils.other.cpu_count">
-<tt class="descclassname">thriftpool.utils.other.</tt><tt class="descname">cpu_count</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.other.cpu_count" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the number of CPUs in the system</p>
-</dd></dl>
-
-<dl class="function">
 <dt id="thriftpool.utils.other.setproctitle">
-<tt class="descclassname">thriftpool.utils.other.</tt><tt class="descname">setproctitle</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.other.setproctitle" title="Permalink to this definition">¶</a></dt>
-<dd><p>setproctitle(title) &#8211; Change the process title.</p>
-</dd></dl>
+<tt class="descclassname">thriftpool.utils.other.</tt><tt class="descname">setproctitle</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.utils.other.setproctitle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="thriftpool.utils.other.camelcase_to_underscore">
 <tt class="descclassname">thriftpool.utils.other.</tt><tt class="descname">camelcase_to_underscore</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.other.camelcase_to_underscore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert CamelCase to under_score.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.utils.platforms">
+<span id="platforms-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">platforms</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.platforms" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="thriftpool.utils.platforms.Daemon">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.platforms.</tt><tt class="descname">Daemon</tt><big>(</big><em>fake=False</em>, <em>excluded_fds=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.Daemon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Fork and close needed resources.</p>
+<dl class="method">
+<dt id="thriftpool.utils.platforms.Daemon.close">
+<tt class="descname">close</tt><big>(</big><em>*args</em><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.Daemon.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.platforms.Daemon.open">
+<tt class="descname">open</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.Daemon.open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.platforms.Daemon.preserved_fds">
+<tt class="descname">preserved_fds</tt><a class="headerlink" href="#thriftpool.utils.platforms.Daemon.preserved_fds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.platforms.Daemon.redirect_to_null">
+<tt class="descname">redirect_to_null</tt><big>(</big><em>fd</em><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.Daemon.redirect_to_null" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.platforms.Daemon.umask">
+<tt class="descname">umask</tt><em class="property"> = 0</em><a class="headerlink" href="#thriftpool.utils.platforms.Daemon.umask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.platforms.Daemon.workdir">
+<tt class="descname">workdir</tt><em class="property"> = '/'</em><a class="headerlink" href="#thriftpool.utils.platforms.Daemon.workdir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="thriftpool.utils.platforms.LockFailed">
+<em class="property">exception </em><tt class="descclassname">thriftpool.utils.platforms.</tt><tt class="descname">LockFailed</tt><a class="headerlink" href="#thriftpool.utils.platforms.LockFailed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.utils.platforms.PIDLock">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.platforms.</tt><tt class="descname">PIDLock</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.PIDLock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Create PID lock and work with it as with resource.</p>
+<dl class="attribute">
+<dt id="thriftpool.utils.platforms.PIDLock.FLAGS">
+<tt class="descname">FLAGS</tt><em class="property"> = 193</em><a class="headerlink" href="#thriftpool.utils.platforms.PIDLock.FLAGS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.utils.platforms.PIDLock.MODE">
+<tt class="descname">MODE</tt><em class="property"> = 420</em><a class="headerlink" href="#thriftpool.utils.platforms.PIDLock.MODE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.platforms.PIDLock.acquire">
+<tt class="descname">acquire</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.PIDLock.acquire" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to write PID lock.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.platforms.PIDLock.exists">
+<tt class="descname">exists</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.PIDLock.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the PID lock exists.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.platforms.PIDLock.maybe_remove">
+<tt class="descname">maybe_remove</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.PIDLock.maybe_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove existed PID lock if we can.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="thriftpool.utils.platforms.PIDLock.process_exists">
+<em class="property">static </em><tt class="descname">process_exists</tt><big>(</big><em>pid</em><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.PIDLock.process_exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check that process exists.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.platforms.PIDLock.read">
+<tt class="descname">read</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.PIDLock.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads and returns the writed PID lock.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.platforms.PIDLock.release">
+<tt class="descname">release</tt><big>(</big><em>*args</em><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.PIDLock.release" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to remove PID lock.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.platforms.PIDLock.remove">
+<tt class="descname">remove</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.PIDLock.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove PID lock if exists.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.utils.platforms.PIDLock.write">
+<tt class="descname">write</tt><big>(</big><em>pid</em><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.PIDLock.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write given PID to lock.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.platforms.create_pidlock">
+<tt class="descclassname">thriftpool.utils.platforms.</tt><tt class="descname">create_pidlock</tt><big>(</big><em>pidfile</em><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.create_pidlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create PID lock, exit if fail.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.platforms.daemonize">
+<tt class="descclassname">thriftpool.utils.platforms.</tt><tt class="descname">daemonize</tt><big>(</big><em>fake=False</em>, <em>excluded_fds=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.daemonize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to start daemon.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.platforms.fileno">
+<tt class="descclassname">thriftpool.utils.platforms.</tt><tt class="descname">fileno</tt><big>(</big><em>f</em><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.fileno" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.platforms.get_fdmax">
+<tt class="descclassname">thriftpool.utils.platforms.</tt><tt class="descname">get_fdmax</tt><big>(</big><em>default=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.get_fdmax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the maximum number of open file descriptors
+on this system.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>default</strong> &#8211; Value returned if there&#8217;s no file
+descriptor limit.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.utils.platforms.ignore_EBADF">
+<tt class="descclassname">thriftpool.utils.platforms.</tt><tt class="descname">ignore_EBADF</tt><big>(</big><em>*args</em>, <em>**kwds</em><big>)</big><a class="headerlink" href="#thriftpool.utils.platforms.ignore_EBADF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.utils.proxy">
+<span id="proxy-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">proxy</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.proxy" title="Permalink to this headline">¶</a></h2>
+<p>Parts of this module is Copyright by Werkzeug Team.</p>
+<dl class="class">
+<dt id="thriftpool.utils.proxy.PromiseProxy">
+<em class="property">class </em><tt class="descclassname">thriftpool.utils.proxy.</tt><tt class="descname">PromiseProxy</tt><big>(</big><em>local</em>, <em>args=None</em>, <em>kwargs=None</em>, <em>name=None</em><big>)</big><a class="headerlink" href="#thriftpool.utils.proxy.PromiseProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">&lt;property</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x1d5b9f0&gt;.Proxy</span></tt></p>
+<p>This is a proxy to an object that has not yet been evaluated.</p>
+<p><tt class="xref py py-class docutils literal"><span class="pre">Proxy</span></tt> will evaluate the object each time, while the
+promise will only evaluate it once.</p>
 </dd></dl>
 
 </div>
@@ -729,7 +1015,21 @@ of <tt class="docutils literal"><span class="pre">(obj,</span> <span class="pre"
 <tt class="descclassname">thriftpool.utils.term.</tt><tt class="descname">fg</tt><big>(</big><em>s</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.fg" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="function">
+<dt id="thriftpool.utils.term.isatty">
+<tt class="descclassname">thriftpool.utils.term.</tt><tt class="descname">isatty</tt><big>(</big><em>stream</em><big>)</big><a class="headerlink" href="#thriftpool.utils.term.isatty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
+</div>
+<div class="section" id="module-thriftpool.utils.text">
+<span id="text-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">text</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.text" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="thriftpool.utils.text.indent">
+<tt class="descclassname">thriftpool.utils.text.</tt><tt class="descname">indent</tt><big>(</big><em>t</em>, <em>indent=0</em><big>)</big><a class="headerlink" href="#thriftpool.utils.text.indent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indent text.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="module-thriftpool.utils.threads">
 <span id="threads-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">threads</span></tt> Module<a class="headerlink" href="#module-thriftpool.utils.threads" title="Permalink to this headline">¶</a></h2>
@@ -833,15 +1133,22 @@ of <tt class="docutils literal"><span class="pre">(obj,</span> <span class="pre"
 <li><a class="reference internal" href="#module-thriftpool.utils.finalize"><tt class="docutils literal"><span class="pre">finalize</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-thriftpool.utils.functional"><tt class="docutils literal"><span class="pre">functional</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-thriftpool.utils.imports"><tt class="docutils literal"><span class="pre">imports</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.local"><tt class="docutils literal"><span class="pre">local</span></tt> Module</a><ul>
+<li><a class="reference internal" href="#thriftpool-utils-local">thriftpool.utils.local</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-thriftpool.utils.logs"><tt class="docutils literal"><span class="pre">logs</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-thriftpool.utils.mixin"><tt class="docutils literal"><span class="pre">mixin</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-thriftpool.utils.other"><tt class="docutils literal"><span class="pre">other</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.platforms"><tt class="docutils literal"><span class="pre">platforms</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.utils.proxy"><tt class="docutils literal"><span class="pre">proxy</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-thriftpool.utils.signals"><tt class="docutils literal"><span class="pre">signals</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-thriftpool.utils.structures"><tt class="docutils literal"><span class="pre">structures</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-thriftpool.utils.term"><tt class="docutils literal"><span class="pre">term</span></tt> Module</a><ul>
 <li><a class="reference internal" href="#celery-utils-term">celery.utils.term</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#module-thriftpool.utils.text"><tt class="docutils literal"><span class="pre">text</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-thriftpool.utils.threads"><tt class="docutils literal"><span class="pre">threads</span></tt> Module</a></li>
 <li><a class="reference internal" href="#subpackages">Subpackages</a><ul>
 </ul>
@@ -893,7 +1200,7 @@ of <tt class="docutils literal"><span class="pre">(obj,</span> <span class="pre"
         <li class="right" >
           <a href="thriftpool.remote.html" title="remote Package"
              >previous</a> |</li>
-        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+        <li><a href="../index.html">thriftpool 0.1.8 documentation</a> &raquo;</li>
           <li><a href="../api.html" >API Documentation</a> &raquo;</li> 
       </ul>
     </div>

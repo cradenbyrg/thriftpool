@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ThriftPool &mdash; thriftpool 0.0.1 documentation</title>
+    <title>ThriftPool &mdash; thriftpool 0.1.8 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.0.1',
+        VERSION:     '0.1.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="thriftpool 0.0.1 documentation" href="#" />
-    <link rel="next" title="API Documentation" href="api.html" /> 
+    <link rel="top" title="thriftpool 0.1.8 documentation" href="#" />
+    <link rel="next" title="Getting Started" href="getting-started/index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,9 +39,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="api.html" title="API Documentation"
+          <a href="getting-started/index.html" title="Getting Started"
              accesskey="N">next</a> |</li>
-        <li><a href="#">thriftpool 0.0.1 documentation</a> &raquo;</li> 
+        <li><a href="#">thriftpool 0.1.8 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -53,8 +53,8 @@
   <div class="section" id="thriftpool">
 <h1>ThriftPool<a class="headerlink" href="#thriftpool" title="Permalink to this headline">¶</a></h1>
 <p><cite>ThriftPool</cite> is an application server for <a class="reference external" href="http://thrift.apache.org/">Thrift</a> services. It should create needed
-sockets, start workers, serve requests from client and log them. It use <a class="reference external" href="http://code.google.com/p/pyev/">pyev</a> as
-wrapper for <a class="reference external" href="http://software.schmorp.de/pkg/libev.html">libev</a> and <a class="reference external" href="http://zeromq.github.com/pyzmq/">ØMQ</a> for load balancing between workers. Request processing
+sockets, start workers, serve requests from client and log them. It use <a class="reference external" href="https://github.com/saghul/pyuv">pyuv</a> as
+wrapper for <a class="reference external" href="https://github.com/joyent/libuv">libuv</a> and <a class="reference external" href="http://zeromq.github.com/pyzmq/">ØMQ</a> for load balancing between workers. Request processing
 written in <a class="reference external" href="http://www.cython.org/">Cython</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -62,10 +62,22 @@ written in <a class="reference external" href="http://www.cython.org/">Cython</a
 </div>
 <p>Key features:</p>
 <ul class="simple">
-<li>Fast request processing (~4000 rps);</li>
+<li>Fast request processing (~3000 rps);</li>
 <li>Compatibility with gevent through monkey patching;</li>
 <li>Support request logging;</li>
 </ul>
+</div>
+<div class="section" id="manual">
+<h1>Manual<a class="headerlink" href="#manual" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/first-steps.html">First steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div class="section" id="reference-docs">
 <h1>Reference Docs<a class="headerlink" href="#reference-docs" title="Permalink to this headline">¶</a></h1>
@@ -97,6 +109,9 @@ written in <a class="reference external" href="http://www.cython.org/">Cython</a
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">ThriftPool</a></li>
+<li><a class="reference internal" href="#manual">Manual</a><ul>
+</ul>
+</li>
 <li><a class="reference internal" href="#reference-docs">Reference Docs</a><ul>
 </ul>
 </li>
@@ -105,8 +120,8 @@ written in <a class="reference external" href="http://www.cython.org/">Cython</a
 </ul>
 
   <h4>Next topic</h4>
-  <p class="topless"><a href="api.html"
-                        title="next chapter">API Documentation</a></p>
+  <p class="topless"><a href="getting-started/index.html"
+                        title="next chapter">Getting Started</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/index.txt"
@@ -139,9 +154,9 @@ written in <a class="reference external" href="http://www.cython.org/">Cython</a
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="api.html" title="API Documentation"
+          <a href="getting-started/index.html" title="Getting Started"
              >next</a> |</li>
-        <li><a href="#">thriftpool 0.0.1 documentation</a> &raquo;</li> 
+        <li><a href="#">thriftpool 0.1.8 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

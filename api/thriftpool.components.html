@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>components Package &mdash; thriftpool 0.0.1 documentation</title>
+    <title>components Package &mdash; thriftpool 0.1.8 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.1',
+        VERSION:     '0.1.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="thriftpool 0.0.1 documentation" href="../index.html" />
+    <link rel="top" title="thriftpool 0.1.8 documentation" href="../index.html" />
     <link rel="up" title="API Documentation" href="../api.html" />
     <link rel="next" title="controllers Package" href="thriftpool.controllers.html" />
     <link rel="prev" title="bin Package" href="thriftpool.bin.html" /> 
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="thriftpool.bin.html" title="bin Package"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+        <li><a href="../index.html">thriftpool 0.1.8 documentation</a> &raquo;</li>
           <li><a href="../api.html" accesskey="U">API Documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -335,7 +335,7 @@ listeners starts.</p>
 
 <dl class="method">
 <dt id="thriftpool.components.listener_pool.ListenerPool.register">
-<tt class="descname">register</tt><big>(</big><em>name</em>, <em>host</em>, <em>port</em>, <em>backlog=None</em><big>)</big><a class="headerlink" href="#thriftpool.components.listener_pool.ListenerPool.register" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">register</tt><big>(</big><em>slot</em><big>)</big><a class="headerlink" href="#thriftpool.components.listener_pool.ListenerPool.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register new listener with given parameters.</p>
 </dd></dl>
 
@@ -449,11 +449,12 @@ listeners.</p>
 <dl class="attribute">
 <dt id="thriftpool.components.worker_pool.WorkerPool.endpoints">
 <tt class="descclassname">WorkerPool.</tt><tt class="descname">endpoints</tt><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool.endpoints" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Collects all endpoints that workers uses.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="thriftpool.components.worker_pool.WorkerPool.register">
-<tt class="descclassname">WorkerPool.</tt><tt class="descname">register</tt><big>(</big><em>name</em>, <em>processor</em><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool.register" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">WorkerPool.</tt><tt class="descname">register</tt><big>(</big><em>slot</em><big>)</big><a class="headerlink" href="#thriftpool.components.worker_pool.WorkerPool.register" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -552,7 +553,7 @@ listeners.</p>
         <li class="right" >
           <a href="thriftpool.bin.html" title="bin Package"
              >previous</a> |</li>
-        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+        <li><a href="../index.html">thriftpool 0.1.8 documentation</a> &raquo;</li>
           <li><a href="../api.html" >API Documentation</a> &raquo;</li> 
       </ul>
     </div>

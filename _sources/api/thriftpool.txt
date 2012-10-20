@@ -9,18 +9,18 @@ thriftpool Package
     :undoc-members:
     :show-inheritance:
 
-:mod:`exceptions` Module
-------------------------
+:mod:`base` Module
+------------------
 
-.. automodule:: thriftpool.exceptions
+.. automodule:: thriftpool.base
     :members:
     :undoc-members:
     :show-inheritance:
 
-:mod:`handlers` Module
-----------------------
+:mod:`exceptions` Module
+------------------------
 
-.. automodule:: thriftpool.handlers
+.. automodule:: thriftpool.exceptions
     :members:
     :undoc-members:
     :show-inheritance:
@@ -43,6 +43,7 @@ Subpackages
     thriftpool.components
     thriftpool.controllers
     thriftpool.remote
+    thriftpool.request
     thriftpool.tests
     thriftpool.utils
 

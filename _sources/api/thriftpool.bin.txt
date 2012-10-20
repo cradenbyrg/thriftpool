@@ -1,10 +1,18 @@
 bin Package
 ===========
 
-:mod:`thriftpool` Module
-------------------------
+:mod:`base` Module
+------------------
 
-.. automodule:: thriftpool.bin.thriftpool
+.. automodule:: thriftpool.bin.base
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+:mod:`thriftpoolctl` Module
+---------------------------
+
+.. automodule:: thriftpool.bin.thriftpoolctl
     :members:
     :undoc-members:
     :show-inheritance:

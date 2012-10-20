@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>bin Package &mdash; thriftpool 0.0.1 documentation</title>
+    <title>bin Package &mdash; thriftpool 0.1.8 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.1',
+        VERSION:     '0.1.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="thriftpool 0.0.1 documentation" href="../index.html" />
+    <link rel="top" title="thriftpool 0.1.8 documentation" href="../index.html" />
     <link rel="up" title="API Documentation" href="../api.html" />
     <link rel="next" title="components Package" href="thriftpool.components.html" />
     <link rel="prev" title="app Package" href="thriftpool.app.html" /> 
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="thriftpool.app.html" title="app Package"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+        <li><a href="../index.html">thriftpool 0.1.8 documentation</a> &raquo;</li>
           <li><a href="../api.html" accesskey="U">API Documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -58,16 +58,279 @@
             
   <div class="section" id="bin-package">
 <h1>bin Package<a class="headerlink" href="#bin-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-thriftpool.bin.thriftpool">
-<span id="thriftpool-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">thriftpool</span></tt> Module<a class="headerlink" href="#module-thriftpool.bin.thriftpool" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="thriftpool.bin.thriftpool.main">
-<tt class="descclassname">thriftpool.bin.thriftpool.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpool.main" title="Permalink to this definition">¶</a></dt>
+<div class="section" id="module-thriftpool.bin.base">
+<span id="base-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">base</span></tt> Module<a class="headerlink" href="#module-thriftpool.bin.base" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="thriftpool.bin.base.BaseCommand">
+<em class="property">class </em><tt class="descclassname">thriftpool.bin.base.</tt><tt class="descname">BaseCommand</tt><big>(</big><em>app=None</em>, <em>stdout=&lt;open file '&lt;stdout&gt;'</em>, <em>mode 'w' at 0x2ae9729d51e0&gt;</em>, <em>stderr=&lt;open file '&lt;stderr&gt;'</em>, <em>mode 'w' at 0x2ae9729d5270&gt;</em><big>)</big><a class="headerlink" href="#thriftpool.bin.base.BaseCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="attribute">
+<dt id="thriftpool.bin.base.BaseCommand.Parser">
+<tt class="descname">Parser</tt><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.Parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify parser class.</p>
+<p>alias of <tt class="xref py py-class docutils literal"><span class="pre">ArgumentParser</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.bin.base.BaseCommand.args">
+<tt class="descname">args</tt><em class="property"> = ''</em><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Argument list used in help.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.base.BaseCommand.create_parser">
+<tt class="descname">create_parser</tt><big>(</big><em>prog_name</em><big>)</big><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.create_parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new parser.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.bin.base.BaseCommand.description">
+<tt class="descname">description</tt><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shortcut for class doc-string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.base.BaseCommand.die">
+<tt class="descname">die</tt><big>(</big><em>msg</em>, <em>status=1</em><big>)</big><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.die" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print message and exit with given status.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.base.BaseCommand.error">
+<tt class="descname">error</tt><big>(</big><em>msg</em><big>)</big><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print given error.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.base.BaseCommand.execute">
+<tt class="descname">execute</tt><big>(</big><em>argv=None</em><big>)</big><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute application from command line.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.base.BaseCommand.handle_argv">
+<tt class="descname">handle_argv</tt><big>(</big><em>prog_name</em>, <em>argv</em><big>)</big><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.handle_argv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses command line arguments from <tt class="docutils literal"><span class="pre">argv</span></tt> and dispatches
+to <tt class="xref py py-meth docutils literal"><span class="pre">__call__()</span></tt>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.bin.base.BaseCommand.options">
+<tt class="descname">options</tt><em class="property"> = ()</em><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify options for this command.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.base.BaseCommand.out">
+<tt class="descname">out</tt><big>(</big><em>msg</em>, <em>fh=None</em><big>)</big><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.out" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print some output to text.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.base.BaseCommand.parse_options">
+<tt class="descname">parse_options</tt><big>(</big><em>prog_name</em>, <em>arguments</em><big>)</big><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.parse_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse the available options.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.base.BaseCommand.parser_options">
+<tt class="descname">parser_options</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.parser_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Additional parser options.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.base.BaseCommand.prepare_parser">
+<tt class="descname">prepare_parser</tt><big>(</big><em>parser</em><big>)</big><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.prepare_parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare parser for work.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.base.BaseCommand.run">
+<tt class="descname">run</tt><big>(</big><em>*args</em>, <em>**options</em><big>)</big><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the body of the command called by <a class="reference internal" href="#thriftpool.bin.base.BaseCommand.handle_argv" title="thriftpool.bin.base.BaseCommand.handle_argv"><tt class="xref py py-meth docutils literal"><span class="pre">handle_argv()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.bin.base.BaseCommand.usage">
+<tt class="descname">usage</tt><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the command-line usage string for this app.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.bin.base.BaseCommand.version">
+<tt class="descname">version</tt><em class="property"> = '0.1.8'</em><a class="headerlink" href="#thriftpool.bin.base.BaseCommand.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Application version.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="thriftpool.bin.base.Error">
+<em class="property">exception </em><tt class="descclassname">thriftpool.bin.base.</tt><tt class="descname">Error</tt><big>(</big><em>reason</em>, <em>status=1</em><big>)</big><a class="headerlink" href="#thriftpool.bin.base.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.bin.base.Option">
+<em class="property">class </em><tt class="descclassname">thriftpool.bin.base.</tt><tt class="descname">Option</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#thriftpool.bin.base.Option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Describe an option for parser.</p>
+<dl class="method">
+<dt id="thriftpool.bin.base.Option.apply">
+<tt class="descname">apply</tt><big>(</big><em>parser</em><big>)</big><a class="headerlink" href="#thriftpool.bin.base.Option.apply" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-thriftpool.bin.thriftpoolctl">
+<span id="thriftpoolctl-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">thriftpoolctl</span></tt> Module<a class="headerlink" href="#module-thriftpool.bin.thriftpoolctl" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="thriftpool.bin.thriftpoolctl.Formatter">
+<em class="property">class </em><tt class="descclassname">thriftpool.bin.thriftpoolctl.</tt><tt class="descname">Formatter</tt><big>(</big><em>prog</em>, <em>indent_increment=2</em>, <em>max_help_position=24</em>, <em>width=None</em><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.Formatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">argparse.HelpFormatter</span></tt></p>
+<p>Print list of commands with help.</p>
+<dl class="attribute">
+<dt id="thriftpool.bin.thriftpoolctl.Formatter.umbrella">
+<tt class="descname">umbrella</tt><em class="property"> = None</em><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.Formatter.umbrella" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.bin.thriftpoolctl.Parser">
+<em class="property">class </em><tt class="descclassname">thriftpool.bin.thriftpoolctl.</tt><tt class="descname">Parser</tt><big>(</big><em>prog=None</em>, <em>usage=None</em>, <em>description=None</em>, <em>epilog=None</em>, <em>version=None</em>, <em>parents=</em><span class="optional">[</span><span class="optional">]</span>, <em>formatter_class=&lt;class 'argparse.HelpFormatter'&gt;</em>, <em>prefix_chars='-'</em>, <em>fromfile_prefix_chars=None</em>, <em>argument_default=None</em>, <em>conflict_handler='error'</em>, <em>add_help=True</em><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.Parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">argparse.ArgumentParser</span></tt></p>
+<p>Overwrite default parser.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.bin.thriftpoolctl.SubCommandMeta">
+<em class="property">class </em><tt class="descclassname">thriftpool.bin.thriftpoolctl.</tt><tt class="descname">SubCommandMeta</tt><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.SubCommandMeta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">type</span></tt></p>
+<p>Metaclass that register sub-commands.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.bin.thriftpoolctl.UmbrellaCommand">
+<em class="property">class </em><tt class="descclassname">thriftpool.bin.thriftpoolctl.</tt><tt class="descname">UmbrellaCommand</tt><big>(</big><em>app=None</em>, <em>stdout=&lt;open file '&lt;stdout&gt;'</em>, <em>mode 'w' at 0x2ae9729d51e0&gt;</em>, <em>stderr=&lt;open file '&lt;stderr&gt;'</em>, <em>mode 'w' at 0x2ae9729d5270&gt;</em><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.UmbrellaCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.bin.base.BaseCommand" title="thriftpool.bin.base.BaseCommand"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.bin.base.BaseCommand</span></tt></a>, <a class="reference internal" href="thriftpool.utils.html#thriftpool.utils.mixin.SubclassMixin" title="thriftpool.utils.mixin.SubclassMixin"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.utils.mixin.SubclassMixin</span></tt></a></p>
+<p>Umbrella for all commands.</p>
+<dl class="attribute">
+<dt id="thriftpool.bin.thriftpoolctl.UmbrellaCommand.Formatter">
+<tt class="descname">Formatter</tt><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.UmbrellaCommand.Formatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new <a class="reference internal" href="#thriftpool.bin.thriftpoolctl.Formatter" title="thriftpool.bin.thriftpoolctl.Formatter"><tt class="xref py py-class docutils literal"><span class="pre">Formatter</span></tt></a> bounded to this class.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.bin.thriftpoolctl.UmbrellaCommand.Parser">
+<em class="property">class </em><tt class="descname">Parser</tt><big>(</big><em>prog=None</em>, <em>usage=None</em>, <em>description=None</em>, <em>epilog=None</em>, <em>version=None</em>, <em>parents=</em><span class="optional">[</span><span class="optional">]</span>, <em>formatter_class=&lt;class 'argparse.HelpFormatter'&gt;</em>, <em>prefix_chars='-'</em>, <em>fromfile_prefix_chars=None</em>, <em>argument_default=None</em>, <em>conflict_handler='error'</em>, <em>add_help=True</em><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.UmbrellaCommand.Parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">argparse.ArgumentParser</span></tt></p>
+<p>Specify new parser.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.thriftpoolctl.UmbrellaCommand.parser_options">
+<tt class="descclassname">UmbrellaCommand.</tt><tt class="descname">parser_options</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.UmbrellaCommand.parser_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.thriftpoolctl.UmbrellaCommand.prepare_parser">
+<tt class="descclassname">UmbrellaCommand.</tt><tt class="descname">prepare_parser</tt><big>(</big><em>parser</em><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.UmbrellaCommand.prepare_parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare parser for work.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.thriftpoolctl.UmbrellaCommand.run">
+<tt class="descclassname">UmbrellaCommand.</tt><tt class="descname">run</tt><big>(</big><em>*args</em>, <em>**options</em><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.UmbrellaCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.bin.thriftpoolctl.UmbrellaCommand.subcommand_classes">
+<tt class="descclassname">UmbrellaCommand.</tt><tt class="descname">subcommand_classes</tt><em class="property"> = {'list_slots': &lt;class 'thriftpool.bin.thriftpoolctl.list_slots'&gt;, 'worker': &lt;class 'thriftpool.bin.thriftpoolctl.worker'&gt;}</em><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.UmbrellaCommand.subcommand_classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary that contains existed subcommands.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thriftpool.bin.thriftpoolctl.UmbrellaCommand.subcommands">
+<tt class="descclassname">UmbrellaCommand.</tt><tt class="descname">subcommands</tt><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.UmbrellaCommand.subcommands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize all subcommands.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.bin.thriftpoolctl.abstract">
+<em class="property">class </em><tt class="descclassname">thriftpool.bin.thriftpoolctl.</tt><tt class="descname">abstract</tt><big>(</big><em>app=None</em>, <em>stdout=&lt;open file '&lt;stdout&gt;'</em>, <em>mode 'w' at 0x2ae9729d51e0&gt;</em>, <em>stderr=&lt;open file '&lt;stderr&gt;'</em>, <em>mode 'w' at 0x2ae9729d5270&gt;</em><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.abstract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.bin.base.BaseCommand" title="thriftpool.bin.base.BaseCommand"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.bin.base.BaseCommand</span></tt></a></p>
+<p>Base class for sub-commands.</p>
+<dl class="attribute">
+<dt id="thriftpool.bin.thriftpoolctl.abstract.abstract">
+<tt class="descname">abstract</tt><em class="property"> = True</em><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.abstract.abstract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register this command in umbrella?</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.bin.thriftpoolctl.list_slots">
+<em class="property">class </em><tt class="descclassname">thriftpool.bin.thriftpoolctl.</tt><tt class="descname">list_slots</tt><big>(</big><em>app=None</em>, <em>stdout=&lt;open file '&lt;stdout&gt;'</em>, <em>mode 'w' at 0x2ae9729d51e0&gt;</em>, <em>stderr=&lt;open file '&lt;stderr&gt;'</em>, <em>mode 'w' at 0x2ae9729d5270&gt;</em><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.list_slots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.bin.thriftpoolctl.abstract" title="thriftpool.bin.thriftpoolctl.abstract"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.bin.thriftpoolctl.abstract</span></tt></a></p>
+<p>Print all registered slots.</p>
+<dl class="attribute">
+<dt id="thriftpool.bin.thriftpoolctl.list_slots.abstract">
+<tt class="descname">abstract</tt><em class="property"> = False</em><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.list_slots.abstract" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.thriftpoolctl.list_slots.format_slot">
+<tt class="descname">format_slot</tt><big>(</big><em>slot</em><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.list_slots.format_slot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.thriftpoolctl.list_slots.run">
+<tt class="descname">run</tt><big>(</big><em>*args</em>, <em>**options</em><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.list_slots.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="thriftpool.bin.thriftpoolctl.main">
+<tt class="descclassname">thriftpool.bin.thriftpoolctl.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="thriftpool.bin.thriftpoolctl.worker">
+<em class="property">class </em><tt class="descclassname">thriftpool.bin.thriftpoolctl.</tt><tt class="descname">worker</tt><big>(</big><em>app=None</em>, <em>stdout=&lt;open file '&lt;stdout&gt;'</em>, <em>mode 'w' at 0x2ae9729d51e0&gt;</em>, <em>stderr=&lt;open file '&lt;stderr&gt;'</em>, <em>mode 'w' at 0x2ae9729d5270&gt;</em><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.worker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.bin.thriftpoolctl.abstract" title="thriftpool.bin.thriftpoolctl.abstract"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.bin.thriftpoolctl.abstract</span></tt></a>, <a class="reference internal" href="#thriftpool.bin.thriftpoold.WorkerCommand" title="thriftpool.bin.thriftpoold.WorkerCommand"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.bin.thriftpoold.WorkerCommand</span></tt></a></p>
+<p>Run worker daemon. Same as <cite>thriftpoold</cite>.</p>
+<dl class="attribute">
+<dt id="thriftpool.bin.thriftpoolctl.worker.abstract">
+<tt class="descname">abstract</tt><em class="property"> = False</em><a class="headerlink" href="#thriftpool.bin.thriftpoolctl.worker.abstract" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
 
 </div>
 <div class="section" id="module-thriftpool.bin.thriftpoold">
 <span id="thriftpoold-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">thriftpoold</span></tt> Module<a class="headerlink" href="#module-thriftpool.bin.thriftpoold" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="thriftpool.bin.thriftpoold.WorkerCommand">
+<em class="property">class </em><tt class="descclassname">thriftpool.bin.thriftpoold.</tt><tt class="descname">WorkerCommand</tt><big>(</big><em>app=None</em>, <em>stdout=&lt;open file '&lt;stdout&gt;'</em>, <em>mode 'w' at 0x2ae9729d51e0&gt;</em>, <em>stderr=&lt;open file '&lt;stderr&gt;'</em>, <em>mode 'w' at 0x2ae9729d5270&gt;</em><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoold.WorkerCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#thriftpool.bin.base.BaseCommand" title="thriftpool.bin.base.BaseCommand"><tt class="xref py py-class docutils literal"><span class="pre">thriftpool.bin.base.BaseCommand</span></tt></a></p>
+<p>Start ThiftPool daemon.</p>
+<dl class="attribute">
+<dt id="thriftpool.bin.thriftpoold.WorkerCommand.options">
+<tt class="descname">options</tt><em class="property"> = (&lt;thriftpool.bin.base.Option object at 0x301ba50&gt;, &lt;thriftpool.bin.base.Option object at 0x301b5d0&gt;, &lt;thriftpool.bin.base.Option object at 0x301b610&gt;, &lt;thriftpool.bin.base.Option object at 0x301b650&gt;, &lt;thriftpool.bin.base.Option object at 0x301b790&gt;, &lt;thriftpool.bin.base.Option object at 0x301be10&gt;)</em><a class="headerlink" href="#thriftpool.bin.thriftpoold.WorkerCommand.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thriftpool.bin.thriftpoold.WorkerCommand.run">
+<tt class="descname">run</tt><big>(</big><em>*args</em>, <em>**options</em><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoold.WorkerCommand.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="function">
 <dt id="thriftpool.bin.thriftpoold.main">
 <tt class="descclassname">thriftpool.bin.thriftpoold.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#thriftpool.bin.thriftpoold.main" title="Permalink to this definition">¶</a></dt>
@@ -85,7 +348,8 @@
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">bin Package</a><ul>
-<li><a class="reference internal" href="#module-thriftpool.bin.thriftpool"><tt class="docutils literal"><span class="pre">thriftpool</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.bin.base"><tt class="docutils literal"><span class="pre">base</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-thriftpool.bin.thriftpoolctl"><tt class="docutils literal"><span class="pre">thriftpoolctl</span></tt> Module</a></li>
 <li><a class="reference internal" href="#module-thriftpool.bin.thriftpoold"><tt class="docutils literal"><span class="pre">thriftpoold</span></tt> Module</a></li>
 </ul>
 </li>
@@ -134,7 +398,7 @@
         <li class="right" >
           <a href="thriftpool.app.html" title="app Package"
              >previous</a> |</li>
-        <li><a href="../index.html">thriftpool 0.0.1 documentation</a> &raquo;</li>
+        <li><a href="../index.html">thriftpool 0.1.8 documentation</a> &raquo;</li>
           <li><a href="../api.html" >API Documentation</a> &raquo;</li> 
       </ul>
     </div>
